@@ -73,3 +73,19 @@ export const DynamicSection = styled(Box)<{ disabled?: boolean }>`
   opacity: ${({ disabled }) => (disabled ? '0.2' : '1')};
   pointer-events: ${({ disabled }) => (disabled ? 'none' : 'initial')};
 `;
+
+export const Buttons = styled(Box)`
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-gap: 10px;
+  margin-top: 10px;
+`;
+
+export const ButtonWrapper = styled(Box)`
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+  padding: 0;
+  align-items: center;
+`;

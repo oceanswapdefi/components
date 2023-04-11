@@ -1,14 +1,19 @@
 /* eslint-disable max-lines */
-import { Currency, FeeAmount, JSBI, Token, TokenAmount } from '@pangolindex/sdk';
+import { CHAINS, Currency, FeeAmount, JSBI, Token, TokenAmount } from '@pangolindex/sdk';
 import React, { useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useWindowSize } from 'react-use';
 import { ThemeContext } from 'styled-components';
-import { Box, Modal, Text } from 'src/components';
+import { Box, Button, Modal, Text } from 'src/components';
 import LiquidityChartRangeInput from 'src/components/LiquidityChartRangeInput';
 import SelectTokenDrawer from 'src/components/SwapWidget/SelectTokenDrawer';
 import { PNG } from 'src/constants/tokens';
-import { useChainId } from 'src/hooks';
+import { useChainId, useLibrary, usePangolinWeb3 } from 'src/hooks';
+import { MixPanelEvents, useMixpanel } from 'src/hooks/mixpanel';
+import { useApproveCallbackHook } from 'src/hooks/useApproveCallback';
+import { ApprovalState } from 'src/hooks/useApproveCallback/constant';
+import useTransactionDeadline from 'src/hooks/useTransactionDeadline';
+import { useWalletModalToggle } from 'src/state/papplication/hooks';
 import { Bound, Field } from 'src/state/pmint/concentratedLiquidity/atom';
 import {
   useDerivedMintInfo,
@@ -16,16 +21,22 @@ import {
   useMintState,
   useRangeHopCallbacks,
 } from 'src/state/pmint/concentratedLiquidity/hooks';
+import { useIsExpertMode, useUserSlippageTolerance } from 'src/state/puser/hooks';
 import {
+  useAddLiquidity,
   useConcentratedPositionFromTokenId,
   useDerivedPositionInfo,
 } from 'src/state/pwallet/concentratedLiquidity/hooks/evm';
+import { useCurrencyBalance } from 'src/state/pwallet/hooks/common';
 import { CloseIcon } from 'src/theme/components';
 import { wrappedCurrency } from 'src/utils/wrappedCurrency';
+import ConfirmDrawer from './ConfirmDrawer';
 import FeeSelector from './FeeSelector';
 import PriceRange from './PriceRange';
 import SelectPair from './SelectPair';
 import {
+  ButtonWrapper,
+  Buttons,
   CurrencyInputTextBox,
   CurrencyInputs,
   DynamicSection,
@@ -39,9 +50,11 @@ import { AddLiquidityProps } from './types';
 
 const AddLiquidity: React.FC<AddLiquidityProps> = (props) => {
   const { t } = useTranslation();
+  const { library, provider } = useLibrary();
+  const { account } = usePangolinWeb3();
   const { height } = useWindowSize();
   const chainId = useChainId();
-
+  const expertMode = useIsExpertMode();
   const { isOpen, onClose } = props;
   const [selectedPercentage, setSelectedPercentage] = useState(0);
   const theme = useContext(ThemeContext);
@@ -73,6 +86,10 @@ const AddLiquidity: React.FC<AddLiquidityProps> = (props) => {
     outOfRange,
     depositADisabled,
     depositBDisabled,
+    parsedAmounts,
+    errorMessage,
+    pricesAtLimit,
+    position,
   } = useDerivedMintInfo(existingPosition);
 
   const {
@@ -83,7 +100,36 @@ const AddLiquidity: React.FC<AddLiquidityProps> = (props) => {
     onCurrencySelection,
     onSetFeeAmount,
     onStartPriceInput,
+    onResetMintState,
   } = useMintActionHandlers(noLiquidity);
+
+  const addLiquidity = useAddLiquidity();
+
+  const isValid = !errorMessage && !invalidRange;
+
+  // modal and loading
+  const [showConfirm, setShowConfirm] = useState<boolean>(false);
+  const [attemptingTxn, setAttemptingTxn] = useState<boolean>(false);
+
+  // txn values
+  const deadline = useTransactionDeadline(); // custom from users settings
+  const [allowedSlippage] = useUserSlippageTolerance(); // custom from users
+  const [txHash, setTxHash] = useState<string>('');
+  const mixpanel = useMixpanel();
+
+  const useApproveCallback = useApproveCallbackHook[chainId];
+
+  // check whether the user has approved the router on the tokens
+  const [approvalA, approveACallback] = useApproveCallback(
+    chainId,
+    parsedAmounts[Field.CURRENCY_A],
+    CHAINS[chainId]?.contracts?.concentratedLiquidity?.nftManager,
+  );
+  const [approvalB, approveBCallback] = useApproveCallback(
+    chainId,
+    parsedAmounts[Field.CURRENCY_B],
+    CHAINS[chainId]?.contracts?.concentratedLiquidity?.nftManager,
+  );
 
   const currency0 = currencies[Field.CURRENCY_A];
   const currency1 = currencies[Field.CURRENCY_B];
@@ -91,8 +137,7 @@ const AddLiquidity: React.FC<AddLiquidityProps> = (props) => {
   // get formatted amounts
   const formattedAmounts = {
     [independentField]: typedValue,
-    // [dependentField]: parsedAmounts[dependentField]?.toSignificant(6) ?? '',
-    [dependentField]: '',
+    [dependentField]: parsedAmounts[dependentField]?.toSignificant(6) ?? '',
   };
 
   const onChangeTokenDrawerStatus = useCallback(() => {
@@ -143,14 +188,8 @@ const AddLiquidity: React.FC<AddLiquidityProps> = (props) => {
   const { [Bound.LOWER]: tickLower, [Bound.UPPER]: tickUpper } = ticks;
   const { [Bound.LOWER]: priceLower, [Bound.UPPER]: priceUpper } = pricesAtTicks;
 
-  const { getDecrementLower, getIncrementLower, getDecrementUpper, getIncrementUpper } = useRangeHopCallbacks(
-    currency0 ?? undefined,
-    currency1 ?? undefined,
-    feeAmount,
-    tickLower,
-    tickUpper,
-    pool,
-  );
+  const { getDecrementLower, getIncrementLower, getDecrementUpper, getIncrementUpper, getSetFullRange } =
+    useRangeHopCallbacks(currency0 ?? undefined, currency1 ?? undefined, feeAmount, tickLower, tickUpper, pool);
 
   const renderPercentage = () => {
     return (
@@ -176,6 +215,141 @@ const AddLiquidity: React.FC<AddLiquidityProps> = (props) => {
         ))}
       </Box>
     );
+  };
+
+  async function onAdd() {
+    if (!chainId || !library || !account || !provider) return;
+
+    if (!currency0 || !currency1) {
+      return;
+    }
+
+    try {
+      setAttemptingTxn(true);
+      const addData = {
+        parsedAmounts,
+        deadline,
+        noLiquidity,
+        allowedSlippage,
+        currencies,
+        position,
+      };
+
+      const response = await addLiquidity(addData);
+
+      setTxHash(response?.hash as string);
+
+      mixpanel.track(MixPanelEvents.ADD_LIQUIDITY, {
+        chainId: chainId,
+        tokenA: currency0?.symbol,
+        tokenB: currency1?.symbol,
+        tokenA_Address: wrappedCurrency(currency0, chainId)?.address,
+        tokenB_Address: wrappedCurrency(currency1, chainId)?.address,
+      });
+      onResetMintState();
+    } catch (err) {
+      const _err = err as any;
+
+      console.error(_err);
+    } finally {
+      setAttemptingTxn(false);
+    }
+  }
+
+  const handleDismissConfirmation = useCallback(() => {
+    setShowConfirm(false);
+    // if there was a tx hash, we want to clear the input
+    // if (txHash) {
+    //   onFieldAInput('', pairAddress);
+    // }
+    setTxHash('');
+    setAttemptingTxn(false);
+  }, [txHash]);
+
+  const handleSetFullRange = useCallback(() => {
+    getSetFullRange();
+
+    const minPrice = pricesAtLimit[Bound.LOWER];
+    const maxPrice = pricesAtLimit[Bound.UPPER];
+    if (minPrice) {
+      onLeftRangeInput(minPrice.toSignificant(5));
+    }
+
+    if (maxPrice) {
+      onRightRangeInput(maxPrice.toSignificant(5));
+    }
+  }, [getSetFullRange, pricesAtLimit, onLeftRangeInput, onRightRangeInput]);
+
+  // toggle wallet when disconnected
+  const toggleWalletModal = useWalletModalToggle();
+
+  const selectedCurrencyBalanceA = useCurrencyBalance(chainId, account ?? undefined, currency0 ?? undefined);
+  const selectedCurrencyBalanceB = useCurrencyBalance(chainId, account ?? undefined, currency1 ?? undefined);
+
+  const renderButton = () => {
+    if (!account) {
+      return (
+        <Button variant="primary" onClick={toggleWalletModal} height="46px">
+          {t('swapPage.connectWallet')}
+        </Button>
+      );
+    } else {
+      return (
+        <Buttons>
+          {(approvalA === ApprovalState.NOT_APPROVED ||
+            approvalA === ApprovalState.PENDING ||
+            approvalB === ApprovalState.NOT_APPROVED ||
+            approvalB === ApprovalState.PENDING) &&
+            isValid && (
+              <ButtonWrapper>
+                {approvalA !== ApprovalState.APPROVED && (
+                  <Button
+                    variant="primary"
+                    onClick={approveACallback}
+                    isDisabled={approvalA === ApprovalState.PENDING}
+                    width={approvalB !== ApprovalState.APPROVED ? '48%' : '100%'}
+                    loading={approvalA === ApprovalState.PENDING}
+                    loadingText={`${t('swapPage.approving')} ${currencies[Field.CURRENCY_A]?.symbol}`}
+                    height="46px"
+                  >
+                    {`${t('addLiquidity.approve')} ` + currencies[Field.CURRENCY_A]?.symbol}
+                  </Button>
+                )}
+                {approvalB !== ApprovalState.APPROVED && (
+                  <Button
+                    variant="primary"
+                    onClick={approveBCallback}
+                    isDisabled={approvalB === ApprovalState.PENDING}
+                    width={approvalA !== ApprovalState.APPROVED ? '48%' : '100%'}
+                    loading={approvalB === ApprovalState.PENDING}
+                    loadingText={`${t('swapPage.approving')} ${currencies[Field.CURRENCY_B]?.symbol}`}
+                    height="46px"
+                  >
+                    {`${t('addLiquidity.approve')} ` + currencies[Field.CURRENCY_B]?.symbol}
+                  </Button>
+                )}
+              </ButtonWrapper>
+            )}
+          <Button
+            height="46px"
+            variant="primary"
+            onClick={() => {
+              expertMode ? onAdd() : setShowConfirm(true);
+            }}
+            isDisabled={
+              !isValid ||
+              (approvalA !== ApprovalState.APPROVED && !depositADisabled) ||
+              (approvalB !== ApprovalState.APPROVED && !depositBDisabled)
+            }
+
+            //isDisabled={!isValid || approvalA !== ApprovalState.APPROVED || approvalB !== ApprovalState.APPROVED}
+            //error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
+          >
+            {errorMessage ?? t('addLiquidity.supply')}
+          </Button>
+        </Buttons>
+      );
+    }
   };
 
   return (
@@ -308,6 +482,12 @@ const AddLiquidity: React.FC<AddLiquidityProps> = (props) => {
               feeAmount={feeAmount}
               ticksAtLimit={ticksAtLimit}
             />
+
+            {!noLiquidity && (
+              <Button variant="outline" onClick={handleSetFullRange}>
+                Full Range
+              </Button>
+            )}
             {outOfRange ? (
               <Box
                 display="flex"
@@ -383,7 +563,13 @@ const AddLiquidity: React.FC<AddLiquidityProps> = (props) => {
                   isNumeric={true}
                   placeholder="0.00"
                   id="swap-currency-input"
-                  addonLabel={renderPercentage()}
+                  addonLabel={
+                    account && (
+                      <Text color="text2" fontWeight={500} fontSize={12}>
+                        {!!currency0 && selectedCurrencyBalanceA ? selectedCurrencyBalanceA?.toSignificant(4) : ' -'}
+                      </Text>
+                    )
+                  }
                 />
               )}
 
@@ -423,11 +609,19 @@ const AddLiquidity: React.FC<AddLiquidityProps> = (props) => {
                   isNumeric={true}
                   placeholder="0.00"
                   id="swap-currency-input"
-                  addonLabel={renderPercentage()}
+                  addonLabel={
+                    account && (
+                      <Text color="text2" fontWeight={500} fontSize={12}>
+                        {!!currency1 && selectedCurrencyBalanceB ? selectedCurrencyBalanceB?.toSignificant(4) : ' -'}
+                      </Text>
+                    )
+                  }
                 />
               )}
             </CurrencyInputs>
           </DynamicSection>
+          {renderButton()}
+
           {isCurrencyDrawerOpen && (
             <SelectTokenDrawer
               isOpen={isCurrencyDrawerOpen}
@@ -435,6 +629,23 @@ const AddLiquidity: React.FC<AddLiquidityProps> = (props) => {
                 onChangeTokenDrawerStatus();
               }}
               onCurrencySelect={handleCurrencySelect}
+            />
+          )}
+
+          {/* Confirm Swap Drawer */}
+          {showConfirm && (
+            <ConfirmDrawer
+              isOpen={showConfirm}
+              poolErrorMessage={errorMessage}
+              currencies={currencies}
+              parsedAmounts={parsedAmounts}
+              noLiquidity={noLiquidity}
+              onAdd={onAdd}
+              attemptingTxn={attemptingTxn}
+              txHash={txHash}
+              onClose={handleDismissConfirmation}
+              position={position}
+              ticksAtLimit={ticksAtLimit}
             />
           )}
         </Wrapper>

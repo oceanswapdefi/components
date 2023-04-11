@@ -46,6 +46,7 @@ export function useMintActionHandlers(noLiquidity: boolean | undefined): {
   onStartPriceInput: (typedValue: string) => void;
   onSetFeeAmount: (value: FeeAmount) => void;
   onCurrencySelection: (field: Field, currency: Currency) => void;
+  onResetMintState: () => void;
 } {
   const chainId = useChainId();
   const {
@@ -55,6 +56,7 @@ export function useMintActionHandlers(noLiquidity: boolean | undefined): {
     setTypeStartPriceInput,
     selectCurrency,
     setFeeAmount,
+    resetMintState,
   } = useMintStateAtom();
 
   const onFieldAInput = useCallback(
@@ -92,12 +94,9 @@ export function useMintActionHandlers(noLiquidity: boolean | undefined): {
     [setTypeStartPriceInput],
   );
 
-  const onSetFeeAmount = useCallback(
-    (value: FeeAmount) => {
-      setFeeAmount({ value });
-    },
-    [setFeeAmount],
-  );
+  const onResetMintState = useCallback(() => {
+    resetMintState();
+  }, [resetMintState]);
 
   const onCurrencySelection = useCallback(
     (field: Field, currency: Currency) => {
@@ -114,6 +113,13 @@ export function useMintActionHandlers(noLiquidity: boolean | undefined): {
     [selectCurrency, chainId],
   );
 
+  const onSetFeeAmount = useCallback(
+    (value: FeeAmount) => {
+      setFeeAmount({ value });
+    },
+    [setFeeAmount],
+  );
+
   return {
     onFieldAInput,
     onFieldBInput,
@@ -122,6 +128,7 @@ export function useMintActionHandlers(noLiquidity: boolean | undefined): {
     onStartPriceInput,
     onCurrencySelection,
     onSetFeeAmount,
+    onResetMintState,
   };
 }
 
@@ -142,7 +149,7 @@ export interface DerivedMintInfo {
   parsedAmounts: { [field in Field]?: CurrencyAmount };
   position: Position | undefined;
   noLiquidity?: boolean;
-  errorMessage?: ReactNode;
+  errorMessage?: string;
   invalidPool: boolean;
   outOfRange: boolean;
   invalidRange: boolean;
@@ -468,7 +475,7 @@ export function useDerivedMintInfo(existingPosition?: Position): DerivedMintInfo
     tickUpper,
   ]);
 
-  let errorMessage: ReactNode | undefined;
+  let errorMessage: string | undefined;
   if (!account) {
     errorMessage = 'Connect Wallet';
   }

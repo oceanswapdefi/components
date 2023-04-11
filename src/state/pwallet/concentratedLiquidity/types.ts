@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Currency, CurrencyAmount, Position, Token } from '@pangolindex/sdk';
 import { BigNumber } from 'ethers';
 
 export interface PositionDetails {
@@ -24,4 +24,19 @@ export interface UseConcentratedPositionResults {
 export interface UseConcentratedPositionsResults {
   loading: boolean;
   positions: PositionDetails[] | undefined;
+}
+
+export interface AddLiquidityProps {
+  parsedAmounts: {
+    CURRENCY_A?: CurrencyAmount;
+    CURRENCY_B?: CurrencyAmount;
+  };
+  deadline: BigNumber | undefined;
+  noLiquidity: boolean | undefined;
+  allowedSlippage: number;
+  currencies: {
+    CURRENCY_A?: Currency;
+    CURRENCY_B?: Currency;
+  };
+  position?: Position;
 }
