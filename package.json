@@ -39,9 +39,8 @@
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@ethersproject/experimental": "^5.5.0",
-    "@gelatonetwork/limit-orders-react": "^2.3.1",
     "@gnosis.pm/safe-apps-web3-react": "^0.6.7",
-    "@oceanswapdefi/sdk": "^0.0.5",
+    "@oceanswapdefi/sdk": "^0.0.6",
     "@pangolindex/token-lists": "^1.0.2",
     "@pangolindex/web3-react-injected-connector": "^1.0.0",
     "@reduxjs/toolkit": "^1.7.2",
@@ -134,7 +133,7 @@
   "peerDependencies": {
     "@gelatonetwork/limit-orders-react": "^2.3.1",
     "@gnosis.pm/safe-apps-web3-react": "^0.6.7",
-    "@oceanswapdefi/sdk": "^0.0.5",
+    "@oceanswapdefi/sdk": "^0.0.6",
     "@pangolindex/web3-react-injected-connector": "^1.0.0",
     "@reduxjs/toolkit": "^1.7.2",
     "@web3-react/core": "6.0.9",
