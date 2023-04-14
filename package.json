@@ -89,7 +89,7 @@
     "rango-sdk-basic": "^0.1.2",
     "react-circular-progressbar": "^2.1.0",
     "react-collapsed": "3.4.0",
-    "react-custom-scrollbars": "^4.2.1",
+    "react-custom-scrollbars-2": "^4.5.0",
     "react-device-detect": "^1.6.2",
     "react-feather": "^2.0.9",
     "react-html-parser": "2.0.2",
