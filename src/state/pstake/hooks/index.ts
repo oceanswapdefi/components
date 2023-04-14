@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { useDummyMinichefHook } from './dummy';
 import { useGetMinichefStakingInfosViaSubgraph, useMinichefStakingInfos } from './evm';
 

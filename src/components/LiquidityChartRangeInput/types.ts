@@ -1,4 +1,4 @@
-import { Currency, Price } from '@pangolindex/sdk';
+import { Currency, Price } from '@oceanswapdefi/sdk';
 
 export enum Bound {
   LOWER = 'LOWER',

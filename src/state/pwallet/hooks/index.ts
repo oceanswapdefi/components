@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { useDummyHook } from 'src/hooks/multiChainsHooks';
 import { useDummyCreatePair, useDummyGetUserLP } from './dummy';
 import {

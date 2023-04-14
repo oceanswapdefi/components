@@ -1,4 +1,4 @@
-import { Chain } from '@pangolindex/sdk';
+import { Chain } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { Text } from 'src/components';
 import { Item, StyledLogo } from './styled';

@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber';
 import { formatUnits } from '@ethersproject/units';
-import { ChainId, JSBI, Token, TokenAmount } from '@pangolindex/sdk';
+import { ChainId, JSBI, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import numeral from 'numeral';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { useGelatoLimitOrderList } from './common';
 
 const useDummyGelatoLimitOrdersList = () => [];

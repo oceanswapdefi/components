@@ -12,7 +12,7 @@ import {
   Token,
   TokenAmount,
   Trade,
-} from '@pangolindex/sdk';
+} from '@oceanswapdefi/sdk';
 import { ParsedQs } from 'qs';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';

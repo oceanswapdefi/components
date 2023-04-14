@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Token, TokenAmount, WAVAX } from '@pangolindex/sdk';
+import { ChainId, JSBI, Token, TokenAmount, WAVAX } from '@oceanswapdefi/sdk';
 import axios from 'axios';
 import { BIG_INT_ZERO, PANGOLIN_API_BASE_URL } from 'src/constants';
 import { PNG, USDC, USDCe } from 'src/constants/tokens';

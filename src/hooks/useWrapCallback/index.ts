@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { useWrapCallback } from './evm';
 import { useWrapHbarCallback } from './hedera';
 import { useWrapNearCallback } from './near';

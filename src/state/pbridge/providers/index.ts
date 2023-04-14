@@ -1,4 +1,4 @@
-import { LIFI, RANGO, SQUID } from '@pangolindex/sdk';
+import { LIFI, RANGO, SQUID } from '@oceanswapdefi/sdk';
 import { GetRoutes } from '../types';
 import { getLiFiRoutes } from './lifi';
 import { getRangoRoutes } from './rango';

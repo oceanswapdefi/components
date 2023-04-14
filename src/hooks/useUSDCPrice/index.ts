@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { useDummyHook } from 'src/hooks/multiChainsHooks';
 import { useUsdPriceCoingecko } from './coingecko';
 import { useUSDCPrice } from './evm';

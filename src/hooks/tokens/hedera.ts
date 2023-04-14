@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import { useMemo, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';

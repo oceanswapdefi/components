@@ -1,4 +1,4 @@
-import { CHAINS, ChainId } from '@pangolindex/sdk';
+import { CHAINS, ChainId } from '@oceanswapdefi/sdk';
 import MULTICALL_ABI from './abi.json';
 
 const MULTICALL_NETWORKS: { [chainId in ChainId]: string } = {

@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { Currency, Pair, TokenAmount } from '@pangolindex/sdk';
+import { Currency, Pair, TokenAmount } from '@oceanswapdefi/sdk';
 import React, { useCallback, useContext, useState } from 'react';
 import { Plus } from 'react-feather';
 import { useTranslation } from 'react-i18next';

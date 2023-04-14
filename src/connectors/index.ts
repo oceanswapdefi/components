@@ -1,6 +1,6 @@
 import { Web3Provider } from '@ethersproject/providers';
 import { SafeAppConnector } from '@gnosis.pm/safe-apps-web3-react';
-import { ALL_CHAINS, ChainId } from '@pangolindex/sdk';
+import { ALL_CHAINS, ChainId } from '@oceanswapdefi/sdk';
 import { InjectedConnector } from '@pangolindex/web3-react-injected-connector';
 import { TalismanConnector } from '@talismn/web3react-v6-connector';
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';

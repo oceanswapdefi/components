@@ -1,4 +1,4 @@
-import { Pair } from '@pangolindex/sdk';
+import { Pair } from '@oceanswapdefi/sdk';
 import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import AutoSizer from 'react-virtualized-auto-sizer';

@@ -1,4 +1,4 @@
-import { LIFI } from '@pangolindex/sdk';
+import { LIFI } from '@oceanswapdefi/sdk';
 import { ComponentStory } from '@storybook/react';
 import React from 'react';
 import { BridgePrioritizations, Step } from 'src/state/pbridge/types';

@@ -1,4 +1,4 @@
-import { ChainId, Currency, JSBI, Price, WAVAX, currencyEquals } from '@pangolindex/sdk';
+import { ChainId, Currency, JSBI, Price, WAVAX, currencyEquals } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { USDCe } from 'src/constants/tokens';
 import { PairState, usePairsContract } from 'src/data/Reserves';

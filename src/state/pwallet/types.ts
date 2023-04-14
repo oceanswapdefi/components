@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Currency, CurrencyAmount, Percent, Token, TokenAmount } from '@pangolindex/sdk';
+import { Currency, CurrencyAmount, Percent, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import { ApprovalState } from 'src/hooks/useApproveCallback/constant';
 
 export interface AddLiquidityProps {

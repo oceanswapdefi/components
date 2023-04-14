@@ -17,7 +17,7 @@ import {
   SQUID,
   Token,
   TokenAmount,
-} from '@pangolindex/sdk';
+} from '@oceanswapdefi/sdk';
 import { RangoClient, SwapResponse as RangoRoute } from 'rango-sdk-basic';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';

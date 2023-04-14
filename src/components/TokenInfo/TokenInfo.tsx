@@ -1,4 +1,4 @@
-import { TokenAmount } from '@pangolindex/sdk';
+import { TokenAmount } from '@oceanswapdefi/sdk';
 import numeral from 'numeral';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';

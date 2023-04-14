@@ -11,7 +11,7 @@ import {
   HbarUnit,
   TokenAssociateTransaction,
 } from '@hashgraph/sdk';
-import { CHAINS, ChainId, CurrencyAmount, Fraction, Token, WAVAX } from '@pangolindex/sdk';
+import { CHAINS, ChainId, CurrencyAmount, Fraction, Token, WAVAX } from '@oceanswapdefi/sdk';
 import { AxiosInstance, AxiosRequestConfig, default as BaseAxios } from 'axios';
 import { hashConnect } from 'src/connectors';
 import { PANGOCHEF_ADDRESS, ROUTER_ADDRESS, SAR_STAKING_ADDRESS } from 'src/constants/address';

@@ -1,4 +1,4 @@
-import { AVALANCHE_MAINNET, CAVAX, ChainId, Currency, Pair, Token, TokenAmount } from '@pangolindex/sdk';
+import { AVALANCHE_MAINNET, CAVAX, ChainId, Currency, Pair, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import axios from 'axios';
 import qs from 'qs';
 import { useQuery } from 'react-query';

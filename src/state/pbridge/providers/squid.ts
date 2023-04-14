@@ -1,6 +1,6 @@
 import { Call, GetRoute, RouteResponse, Route as SquidRoute, RouteData as SquidRouteData } from '@0xsquid/sdk';
 import { parseUnits } from '@ethersproject/units';
-import { Currency, SQUID, Token, TokenAmount } from '@pangolindex/sdk';
+import { Currency, SQUID, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import axios from 'axios';
 import { SQUID_API } from 'src/constants';
 import { calculateTransactionTime } from 'src/utils';

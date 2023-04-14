@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { useChainId } from 'src/hooks';
 import { useSelectedTokenList } from 'src/state/plists/hooks';

@@ -1,4 +1,4 @@
-import { CHAINS, ChefType, CurrencyAmount, JSBI, Pair, Token, TokenAmount } from '@pangolindex/sdk';
+import { CHAINS, ChefType, CurrencyAmount, JSBI, Pair, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BIG_INT_ZERO, ZERO_ADDRESS } from 'src/constants';

@@ -1,4 +1,4 @@
-import { JSBI, Pair, Price, Token, TokenAmount, WAVAX } from '@pangolindex/sdk';
+import { JSBI, Pair, Price, Token, TokenAmount, WAVAX } from '@oceanswapdefi/sdk';
 import { BigNumber } from 'ethers';
 import { BIG_INT_ZERO } from 'src/constants';
 import { PNG } from 'src/constants/tokens';

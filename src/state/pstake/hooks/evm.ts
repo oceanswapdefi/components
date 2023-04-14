@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber';
-import { CHAINS, ChainId, JSBI, Pair, Token, TokenAmount, WAVAX } from '@pangolindex/sdk';
+import { CHAINS, ChainId, JSBI, Pair, Token, TokenAmount, WAVAX } from '@oceanswapdefi/sdk';
 import { getAddress, parseUnits } from 'ethers/lib/utils';
 import { useMemo } from 'react';
 import { useQuery } from 'react-query';

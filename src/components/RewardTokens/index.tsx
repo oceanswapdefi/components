@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import React, { useMemo } from 'react';
 import { Box, CurrencyLogo } from 'src/components';
 import { PNG } from 'src/constants/tokens';

@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 import { formatUnits } from '@ethersproject/units';
-import { CAVAX, ChainId, CurrencyAmount, Fraction, JSBI, Price, TokenAmount, WAVAX } from '@pangolindex/sdk';
+import { CAVAX, ChainId, CurrencyAmount, Fraction, JSBI, Price, TokenAmount, WAVAX } from '@oceanswapdefi/sdk';
 import { parseUnits } from 'ethers/lib/utils';
 import numeral from 'numeral';
 import React, { useCallback, useContext, useEffect, useState } from 'react';

@@ -1,5 +1,5 @@
 import { parseBytes32String } from '@ethersproject/strings';
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import ERC20_INTERFACE, { ERC20_BYTES32_INTERFACE } from 'src/constants/abis/erc20';
 import { useChainId } from 'src/hooks';

@@ -1,6 +1,6 @@
-import { Currency, Token } from '@pangolindex/sdk';
+import { Currency, Token } from '@oceanswapdefi/sdk';
 import React from 'react';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { useTranslation } from 'react-i18next';
 import { Box, Text } from 'src/components';
 import { useCoinGeckoTokenData } from 'src/state/pcoingecko/hooks';
@@ -24,7 +24,7 @@ export default function CoinDescription({ coin }: Props) {
       </Text>
 
       <Text color="text1" fontSize={14}>
-        {ReactHtmlParser(data?.description.replace('\n', '<br />'))}
+        {parse(data?.description.replace('\n', '<br />'))}
       </Text>
 
       <Box mt="5px">

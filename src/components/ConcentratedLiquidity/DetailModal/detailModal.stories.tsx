@@ -1,4 +1,4 @@
-import { CHAINS, ChainId, Token } from '@pangolindex/sdk';
+import { CHAINS, ChainId, Token } from '@oceanswapdefi/sdk';
 import { ComponentStory } from '@storybook/react';
 import React, { useCallback, useState } from 'react';
 import { Button } from 'src';

@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber';
 import { TransactionResponse } from '@ethersproject/providers';
-import { TokenAmount } from '@pangolindex/sdk';
+import { TokenAmount } from '@oceanswapdefi/sdk';
 import { useEffect, useMemo, useState } from 'react';
 import { BIGNUMBER_ZERO } from 'src/constants';
 import { PNG } from 'src/constants/tokens';

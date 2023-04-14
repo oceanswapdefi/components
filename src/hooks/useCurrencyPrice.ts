@@ -1,4 +1,4 @@
-import { JSBI, Pair, Price, Token, TokenAmount, WAVAX } from '@pangolindex/sdk';
+import { JSBI, Pair, Price, Token, TokenAmount, WAVAX } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { useSubgraphTokens } from 'src/apollo/tokens';
 import { ZERO_ADDRESS } from 'src/constants';

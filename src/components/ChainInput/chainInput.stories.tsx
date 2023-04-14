@@ -1,4 +1,4 @@
-import { CHAINS, ChainId } from '@pangolindex/sdk';
+import { CHAINS, ChainId } from '@oceanswapdefi/sdk';
 import { ComponentStory } from '@storybook/react';
 import React from 'react';
 import { ChainInputProps } from './types';

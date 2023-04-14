@@ -1,4 +1,4 @@
-import { BridgeChain, BridgeCurrency } from '@pangolindex/sdk';
+import { BridgeChain, BridgeCurrency } from '@oceanswapdefi/sdk';
 import { GetRoutesProps } from 'src/state/pbridge/types';
 
 export type BridgeCardProps = {

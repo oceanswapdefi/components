@@ -1,4 +1,4 @@
-import { CAVAX } from '@pangolindex/sdk';
+import { CAVAX } from '@oceanswapdefi/sdk';
 import { useChainId } from 'src/hooks';
 import { useHederaTokenAssociated } from 'src/hooks/tokens/hedera';
 import { useCurrency } from 'src/hooks/useCurrency';

@@ -1,4 +1,4 @@
-import { CHAINS, ChefType, Currency } from '@pangolindex/sdk';
+import { CHAINS, ChefType, Currency } from '@oceanswapdefi/sdk';
 import React, { useState } from 'react';
 import { useChainId } from 'src/hooks';
 import { PangoChefInfo } from 'src/state/ppangoChef/types';

@@ -11,7 +11,7 @@ import {
   RANGO,
   SQUID,
   // THORSWAP,
-} from '@pangolindex/sdk';
+} from '@oceanswapdefi/sdk';
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { ChevronDown, ChevronRight, RefreshCcw, X } from 'react-feather';
 import { useTranslation } from 'react-i18next';

@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@pangolindex/sdk';
+import { Currency, CurrencyAmount, Token } from '@oceanswapdefi/sdk';
 import React, { useContext } from 'react';
 import { AlertTriangle } from 'react-feather';
 import { useTranslation } from 'react-i18next';

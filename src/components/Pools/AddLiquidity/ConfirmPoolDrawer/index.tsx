@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { Currency, CurrencyAmount, Fraction, Percent, TokenAmount } from '@pangolindex/sdk';
+import { Currency, CurrencyAmount, Fraction, Percent, TokenAmount } from '@oceanswapdefi/sdk';
 import numeral from 'numeral';
 import React, { useContext } from 'react';
 import { AlertTriangle } from 'react-feather';

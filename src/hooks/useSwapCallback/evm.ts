@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { Contract } from '@ethersproject/contracts';
-import { JSBI, Percent, Router, SwapParameters, Trade, TradeType } from '@pangolindex/sdk';
+import { JSBI, Percent, Router, SwapParameters, Trade, TradeType } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { INITIAL_ALLOWED_SLIPPAGE, ZERO_ADDRESS } from 'src/constants';
 import { BIPS_BASE } from 'src/constants/swap';

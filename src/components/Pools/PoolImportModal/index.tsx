@@ -1,4 +1,4 @@
-import { CAVAX, Currency } from '@pangolindex/sdk';
+import { CAVAX, Currency } from '@oceanswapdefi/sdk';
 import React, { useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ThemeContext } from 'styled-components';

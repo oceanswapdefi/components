@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { Currency, Pair, Percent } from '@pangolindex/sdk';
+import { Currency, Pair, Percent } from '@oceanswapdefi/sdk';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Loader, NumberOptions, Text, TextInput, TransactionCompleted } from 'src/components';

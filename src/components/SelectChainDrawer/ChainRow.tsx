@@ -1,4 +1,4 @@
-import { Chain } from '@pangolindex/sdk';
+import { Chain } from '@oceanswapdefi/sdk';
 import React, { useCallback } from 'react';
 import { Text } from '..';
 import { ChainLogo, ChainRowRoot } from './styled';

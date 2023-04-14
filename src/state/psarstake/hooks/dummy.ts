@@ -1,4 +1,4 @@
-import { TokenAmount } from '@pangolindex/sdk';
+import { TokenAmount } from '@oceanswapdefi/sdk';
 import { useState } from 'react';
 import { PNG } from 'src/constants/tokens';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';

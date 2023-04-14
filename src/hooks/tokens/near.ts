@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import { useEffect, useMemo, useState } from 'react';
 import { useQueries } from 'react-query';
 import { useChainId } from 'src/hooks';

@@ -1,4 +1,4 @@
-import { Currency, JSBI, Pair, TokenAmount } from '@pangolindex/sdk';
+import { Currency, JSBI, Pair, TokenAmount } from '@oceanswapdefi/sdk';
 import numeral from 'numeral';
 import React from 'react';
 import AnalyticsIcon from 'src/assets/images/analytics.svg';

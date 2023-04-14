@@ -1,4 +1,4 @@
-import { Currency } from '@pangolindex/sdk';
+import { Currency } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'src/components/Text';

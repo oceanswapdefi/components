@@ -1,4 +1,4 @@
-import { CHAINS, ChainId, Token } from '@pangolindex/sdk';
+import { CHAINS, ChainId, Token } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { Box } from 'src/components';
 import LiquidityChartRangeInput from 'src/components/LiquidityChartRangeInput';

@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { CurrencyAmount, Price, TokenAmount } from '@pangolindex/sdk';
+import { CurrencyAmount, Price, TokenAmount } from '@oceanswapdefi/sdk';
 import { MinichefStakingInfo } from '../pstake/types';
 
 export enum PoolType {

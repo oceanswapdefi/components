@@ -1,6 +1,6 @@
 import { parseUnits } from '@ethersproject/units';
 import LIFI, { Step as LifiStep, RouteOptions, RoutesRequest, isLifiStep } from '@lifi/sdk';
-import { Currency, LIFI as LIFIBridge, Token, TokenAmount } from '@pangolindex/sdk';
+import { Currency, LIFI as LIFIBridge, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import { calculateTransactionTime } from 'src/utils';
 import { BridgePrioritizations, GetRoutes, GetRoutesProps, Route } from '../types';
 

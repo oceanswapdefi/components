@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { atom, useAtom } from 'jotai';
 import { useCallback } from 'react';
 import { ZERO_ADDRESS } from '../../constants';

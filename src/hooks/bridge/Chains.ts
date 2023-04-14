@@ -1,7 +1,7 @@
 import { ChainData, Squid } from '@0xsquid/sdk';
 import LIFI from '@lifi/sdk';
 import { ChainType, EVMChain } from '@lifi/types';
-import { BridgeChain, LIFI as LIFIBridge, NetworkType, RANGO, SQUID } from '@pangolindex/sdk';
+import { BridgeChain, LIFI as LIFIBridge, NetworkType, RANGO, SQUID } from '@oceanswapdefi/sdk';
 import {
   BlockchainMeta as RangoChainMeta,
   TransactionType as RangoChainType,

@@ -1,4 +1,4 @@
-import { Currency } from '@pangolindex/sdk';
+import { Currency } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { LogoSize } from 'src/constants';
 import { Box } from '../Box';

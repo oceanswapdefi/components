@@ -1,7 +1,7 @@
 import { JsonRpcProvider } from '@ethersproject/providers';
 import { hethers } from '@hashgraph/hethers';
 import { AccountId, Transaction, TransactionId } from '@hashgraph/sdk';
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { AbstractConnector } from '@web3-react/abstract-connector';
 import { AbstractConnectorArguments } from '@web3-react/types';
 import EventEmitter from 'eventemitter3';

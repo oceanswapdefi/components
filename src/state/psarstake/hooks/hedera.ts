@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber';
-import { Fraction, JSBI } from '@pangolindex/sdk';
+import { Fraction, JSBI } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { useQuery, useQueryClient } from 'react-query';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';

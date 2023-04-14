@@ -1,4 +1,4 @@
-import { Currency, JSBI, Token, TokenAmount } from '@pangolindex/sdk';
+import { Currency, JSBI, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import React, { useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useWindowSize } from 'react-use';

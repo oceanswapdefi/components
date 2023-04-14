@@ -1,4 +1,4 @@
-import { CHAINS, Fraction, Token } from '@pangolindex/sdk';
+import { CHAINS, Fraction, Token } from '@oceanswapdefi/sdk';
 import numeral from 'numeral';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';

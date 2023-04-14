@@ -1,4 +1,4 @@
-import { BridgeChain, BridgeCurrency, CurrencyAmount } from '@pangolindex/sdk';
+import { BridgeChain, BridgeCurrency, CurrencyAmount } from '@oceanswapdefi/sdk';
 
 export type BridgeInputsWidgetProps = {
   /**

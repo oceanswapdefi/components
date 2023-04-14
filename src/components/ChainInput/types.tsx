@@ -1,4 +1,4 @@
-import { Chain } from '@pangolindex/sdk';
+import { Chain } from '@oceanswapdefi/sdk';
 import * as React from 'react';
 import { ButtonStyleProps } from '../Button/types';
 

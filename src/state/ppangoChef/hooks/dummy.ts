@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import { PangoChefInfo } from '../types';
 
 /* eslint-disable @typescript-eslint/no-unused-vars */

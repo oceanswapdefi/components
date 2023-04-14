@@ -1,4 +1,4 @@
-import { ChainId, Trade } from '@pangolindex/sdk';
+import { ChainId, Trade } from '@oceanswapdefi/sdk';
 import { useCallback } from 'react';
 import { ApprovalState } from './constant';
 

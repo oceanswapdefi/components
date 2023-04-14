@@ -1,4 +1,4 @@
-import { BRIDGE_PARTNERS } from '@pangolindex/sdk';
+import { BRIDGE_PARTNERS } from '@oceanswapdefi/sdk';
 import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, CountdownCounter, Loader, Text, Tooltip } from 'src/components';

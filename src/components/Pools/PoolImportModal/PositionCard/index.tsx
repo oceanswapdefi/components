@@ -1,4 +1,4 @@
-import { Currency, JSBI, Pair, Percent } from '@pangolindex/sdk';
+import { Currency, JSBI, Pair, Percent } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, DoubleCurrencyLogo, Stat, Text } from 'src/components';

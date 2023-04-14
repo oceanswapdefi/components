@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber';
 import { TransactionResponse } from '@ethersproject/providers';
-import { CHAINS, ChainId, Fraction, JSBI, Pair, Token, TokenAmount, WAVAX } from '@pangolindex/sdk';
+import { CHAINS, ChainId, Fraction, JSBI, Pair, Token, TokenAmount, WAVAX } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BIG_INT_SECONDS_IN_WEEK, BIG_INT_ZERO, ZERO_ADDRESS } from 'src/constants';

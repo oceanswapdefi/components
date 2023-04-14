@@ -1,4 +1,4 @@
-import { Currency } from '@pangolindex/sdk';
+import { Currency } from '@oceanswapdefi/sdk';
 import React, { useCallback } from 'react';
 import { LoaderIcon } from 'src/components/Icons';
 import { useChainId, usePangolinWeb3 } from 'src/hooks';

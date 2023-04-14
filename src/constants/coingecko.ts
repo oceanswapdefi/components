@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@pangolindex/sdk';
+import { ChainId, Token } from '@oceanswapdefi/sdk';
 import { USDC, USDCe, USDTe } from './tokens';
 
 export const COINGEKO_BASE_URL = `https://api.coingecko.com/api/v3`;

@@ -1,4 +1,4 @@
-import { Currency } from '@pangolindex/sdk';
+import { Currency } from '@oceanswapdefi/sdk';
 
 export type PositionCardProps = {
   currency0: Currency;

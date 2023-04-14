@@ -1,4 +1,4 @@
-import { Pair } from '@pangolindex/sdk';
+import { Pair } from '@oceanswapdefi/sdk';
 import React, { useCallback, useContext, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Modal } from 'src/components';

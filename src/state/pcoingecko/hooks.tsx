@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { CHAINS, ChainId, Currency, Token } from '@pangolindex/sdk';
+import { CHAINS, ChainId, Currency, Token } from '@oceanswapdefi/sdk';
 import axios, { AxiosResponse } from 'axios';
 import { useEffect, useMemo, useState } from 'react';
 import { UseQueryResult, useQueries, useQuery } from 'react-query';

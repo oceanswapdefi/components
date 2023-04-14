@@ -1,4 +1,4 @@
-import { CurrencyAmount, Percent } from '@pangolindex/sdk';
+import { CurrencyAmount, Percent } from '@oceanswapdefi/sdk';
 import React, { useContext, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
 import { warningSeverity } from 'src/utils/prices';

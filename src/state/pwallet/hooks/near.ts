@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 
-import { ChainId, Pair, Token, TokenAmount, WAVAX } from '@pangolindex/sdk';
+import { ChainId, Pair, Token, TokenAmount, WAVAX } from '@oceanswapdefi/sdk';
 import { parseUnits } from 'ethers/lib/utils';
 import qs from 'qs';
 import { useEffect, useMemo, useState } from 'react';

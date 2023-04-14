@@ -1,4 +1,4 @@
-import { CHAINS, ChefType } from '@pangolindex/sdk';
+import { CHAINS, ChefType } from '@oceanswapdefi/sdk';
 import React, { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useChainId } from 'src/hooks';

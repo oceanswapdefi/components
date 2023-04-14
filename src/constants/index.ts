@@ -1,4 +1,4 @@
-import { ChainId, ChefType, Fraction, JSBI, Percent, Token, WAVAX } from '@pangolindex/sdk';
+import { ChainId, ChefType, Fraction, JSBI, Percent, Token, WAVAX } from '@oceanswapdefi/sdk';
 import BN from 'bn.js';
 import { BigNumber } from 'ethers';
 import { PNG } from './tokens';

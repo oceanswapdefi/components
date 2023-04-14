@@ -1,4 +1,4 @@
-import { CHAINS, ChefType, Token } from '@pangolindex/sdk';
+import { CHAINS, ChefType, Token } from '@oceanswapdefi/sdk';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Loader, Stat, Text, TransactionCompleted } from 'src/components';

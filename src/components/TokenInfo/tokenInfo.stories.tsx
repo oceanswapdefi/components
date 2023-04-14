@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { ComponentStory } from '@storybook/react';
 import React from 'react';
 import { PNG } from 'src/constants/tokens';

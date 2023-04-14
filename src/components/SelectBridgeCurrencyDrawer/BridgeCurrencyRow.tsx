@@ -1,4 +1,4 @@
-import { BridgeCurrency } from '@pangolindex/sdk';
+import { BridgeCurrency } from '@oceanswapdefi/sdk';
 import React, { useCallback } from 'react';
 import { Text } from '..';
 import { BridgeCurrencyLogo, BridgeCurrencyRowRoot } from './styled';

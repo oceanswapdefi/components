@@ -1,4 +1,4 @@
-import { CHAINS, Chain, ChainId } from '@pangolindex/sdk';
+import { CHAINS, Chain, ChainId } from '@oceanswapdefi/sdk';
 import { useWeb3React } from '@web3-react/core';
 import React, { useCallback, useContext, useMemo, useState } from 'react';
 import Scrollbars from 'react-custom-scrollbars';

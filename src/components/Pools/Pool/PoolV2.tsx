@@ -1,4 +1,4 @@
-import { JSBI } from '@pangolindex/sdk';
+import { JSBI } from '@oceanswapdefi/sdk';
 import React, { useMemo } from 'react';
 import { BIG_INT_ZERO } from 'src/constants';
 import { MinichefStakingInfo, PoolType } from 'src/state/pstake/types';

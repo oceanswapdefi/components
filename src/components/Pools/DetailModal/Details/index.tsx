@@ -1,4 +1,4 @@
-import { CHAINS, Fraction, Token } from '@pangolindex/sdk';
+import { CHAINS, Fraction, Token } from '@oceanswapdefi/sdk';
 import deepEqual from 'deep-equal';
 import numeral from 'numeral';
 import React from 'react';

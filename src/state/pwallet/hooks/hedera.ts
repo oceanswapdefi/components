@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber';
-import { CAVAX, ChainId, Currency, JSBI, Pair, Token, TokenAmount, WAVAX } from '@pangolindex/sdk';
+import { CAVAX, ChainId, Currency, JSBI, Pair, Token, TokenAmount, WAVAX } from '@oceanswapdefi/sdk';
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQueries, useQuery } from 'react-query';

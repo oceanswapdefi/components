@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { useSubgraphTokens } from 'src/apollo/tokens';
 import { useChainId } from 'src/hooks';

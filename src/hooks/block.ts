@@ -1,4 +1,4 @@
-import { CHAINS, ChainId } from '@pangolindex/sdk';
+import { CHAINS, ChainId } from '@oceanswapdefi/sdk';
 import axios from 'axios';
 import { useQuery } from 'react-query';
 import { useLastSubgraphBlock } from 'src/apollo/block';

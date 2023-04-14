@@ -1,7 +1,7 @@
 import { Squid, TokenData } from '@0xsquid/sdk';
 import LIFI from '@lifi/sdk';
 import { Token } from '@lifi/types';
-import { BridgeCurrency, LIFI as LIFIBridge, RANGO, SQUID } from '@pangolindex/sdk';
+import { BridgeCurrency, LIFI as LIFIBridge, RANGO, SQUID } from '@oceanswapdefi/sdk';
 import { BlockchainMeta, TransactionType as RangoChainType, RangoClient, Token as RangoToken } from 'rango-sdk-basic';
 import { useMemo } from 'react';
 import { useQuery } from 'react-query';

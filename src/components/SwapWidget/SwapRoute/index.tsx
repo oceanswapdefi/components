@@ -1,4 +1,4 @@
-import { Trade } from '@pangolindex/sdk';
+import { Trade } from '@oceanswapdefi/sdk';
 import React, { useContext } from 'react';
 import { ChevronRight } from 'react-feather';
 import { ThemeContext } from 'styled-components';

@@ -1,5 +1,5 @@
 import { parseUnits } from '@ethersproject/units';
-import { Token, Trade } from '@pangolindex/sdk';
+import { Token, Trade } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { NEAR_EXCHANGE_CONTRACT_ADDRESS } from 'src/connectors';
 import { INITIAL_ALLOWED_SLIPPAGE, ONE_YOCTO_NEAR } from 'src/constants';

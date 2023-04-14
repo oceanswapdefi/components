@@ -1,2 +1,2 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 export type TokenReturnType = Token | undefined | null;

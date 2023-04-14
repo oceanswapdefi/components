@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent, Token, WAVAX } from '@pangolindex/sdk';
+import { ChainId, JSBI, Percent, Token, WAVAX } from '@oceanswapdefi/sdk';
 import { DAIe, PNG, USDC, USDCe, USDTe } from './tokens';
 
 // a list of tokens by chain

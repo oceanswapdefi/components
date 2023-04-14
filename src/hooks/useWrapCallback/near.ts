@@ -1,4 +1,4 @@
-import { CAVAX, Currency, WAVAX, currencyEquals } from '@pangolindex/sdk';
+import { CAVAX, Currency, WAVAX, currencyEquals } from '@oceanswapdefi/sdk';
 import { parseUnits } from 'ethers/lib/utils';
 import { useMemo } from 'react';
 import { tryParseAmount } from 'src/state/pswap/hooks/common';

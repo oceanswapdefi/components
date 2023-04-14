@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@pangolindex/sdk';
+import { ChainId, Token } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { HelpCircle } from 'react-feather';
 import { PairDataUser, TokenDataUser } from 'src/state/pportfolio/hooks';

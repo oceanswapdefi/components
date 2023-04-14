@@ -8,7 +8,7 @@ import {
   Percent,
   Price,
   TokenAmount,
-} from '@pangolindex/sdk';
+} from '@oceanswapdefi/sdk';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { usePairTotalSupplyHook } from 'src/data/multiChainsHooks';

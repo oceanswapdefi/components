@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import { LogoSize } from 'src/constants';
 
 export interface RewardTokensProps {

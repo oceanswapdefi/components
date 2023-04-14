@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { CurrencyAmount, JSBI } from '@pangolindex/sdk';
+import { CurrencyAmount, JSBI } from '@oceanswapdefi/sdk';
 import { BIGNUMBER_ZERO, ONE_FRACTION, PANGOCHEF_COMPOUND_SLIPPAGE } from 'src/constants';
 import { ValueVariables } from './types';
 

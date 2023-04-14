@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { useApproveCallback, useApproveCallbackFromTrade } from './evm';
 import { useApproveCallbackFromHederaTrade, useHederaApproveCallback } from './hedera';
 import { useApproveCallbackFromNearTrade, useNearApproveCallback } from './near';

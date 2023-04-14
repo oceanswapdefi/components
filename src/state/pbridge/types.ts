@@ -1,6 +1,6 @@
 import { CallType, RouteData as SquidRoute } from '@0xsquid/sdk';
 import { Route as LifiRoute } from '@lifi/sdk';
-import { Bridge, BridgeChain, BridgeCurrency } from '@pangolindex/sdk';
+import { Bridge, BridgeChain, BridgeCurrency } from '@oceanswapdefi/sdk';
 import { QuoteResponse as RangoQuote, SwapResponse as RangoSwap } from 'rango-sdk-basic/lib';
 
 export enum BridgePrioritizations {

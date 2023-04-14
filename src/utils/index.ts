@@ -24,7 +24,7 @@ import {
   TokenAmount,
   Trade,
   currencyEquals,
-} from '@pangolindex/sdk';
+} from '@oceanswapdefi/sdk';
 import { MetamaskError, ZERO_ADDRESS } from 'src/constants';
 import { ROUTER_ADDRESS, ROUTER_DAAS_ADDRESS, SAR_STAKING_ADDRESS } from 'src/constants/address';
 import { hederaFn } from 'src/utils/hedera';

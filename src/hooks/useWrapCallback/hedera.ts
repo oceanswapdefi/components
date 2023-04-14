@@ -1,4 +1,4 @@
-import { CAVAX, Currency, WAVAX, currencyEquals } from '@pangolindex/sdk';
+import { CAVAX, Currency, WAVAX, currencyEquals } from '@oceanswapdefi/sdk';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Field } from 'src/state/pswap/atom';

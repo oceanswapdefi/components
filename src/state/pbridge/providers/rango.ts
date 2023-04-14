@@ -1,5 +1,5 @@
 import { parseUnits } from '@ethersproject/units';
-import { Currency, RANGO, Token, TokenAmount } from '@pangolindex/sdk';
+import { Currency, RANGO, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import {
   BlockchainMeta,
   EvmBlockchainMeta,

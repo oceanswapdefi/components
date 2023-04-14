@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Drawer from 'src/components/Drawer';

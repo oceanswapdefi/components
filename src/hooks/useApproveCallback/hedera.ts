@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { CAVAX, ChainId, CurrencyAmount, JSBI, TokenAmount, Trade } from '@pangolindex/sdk';
+import { CAVAX, ChainId, CurrencyAmount, JSBI, TokenAmount, Trade } from '@oceanswapdefi/sdk';
 import { useCallback, useMemo } from 'react';
 import { useQuery } from 'react-query';
 import { ZERO_ADDRESS } from 'src/constants';

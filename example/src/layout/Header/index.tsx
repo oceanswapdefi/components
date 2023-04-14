@@ -12,7 +12,7 @@ import {
 } from '@components/index';
 import { useChainId } from '@components/hooks/index';
 import Logo from '../Logo';
-import { CHAINS, TokenAmount } from '@pangolindex/sdk';
+import { CHAINS, TokenAmount } from '@oceanswapdefi/sdk';
 
 export default function Header() {
   const context = useWeb3React();

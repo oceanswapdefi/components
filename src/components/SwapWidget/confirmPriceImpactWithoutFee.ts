@@ -1,4 +1,4 @@
-import { Percent } from '@pangolindex/sdk';
+import { Percent } from '@oceanswapdefi/sdk';
 import { ALLOWED_PRICE_IMPACT_HIGH, PRICE_IMPACT_WITHOUT_FEE_CONFIRM_MIN } from 'src/constants/swap';
 
 /**

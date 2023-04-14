@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { CurrencyAmount, JSBI, Token, TokenAmount, Trade } from '@pangolindex/sdk';
+import { CurrencyAmount, JSBI, Token, TokenAmount, Trade } from '@oceanswapdefi/sdk';
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { RefreshCcw } from 'react-feather';
 import { useTranslation } from 'react-i18next';

@@ -1,5 +1,5 @@
 import { parseUnits } from '@ethersproject/units';
-import { Currency, Price, TokenAmount } from '@pangolindex/sdk';
+import { Currency, Price, TokenAmount } from '@oceanswapdefi/sdk';
 import { useEffect, useMemo, useState } from 'react';
 import { NEAR_API_BASE_URL } from 'src/constants';
 import { USDCe } from 'src/constants/tokens';

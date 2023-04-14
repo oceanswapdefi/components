@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { TokenList } from '@pangolindex/token-lists';
 import { atom, useAtom } from 'jotai';
 import { nanoid } from 'nanoid';

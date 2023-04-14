@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useChainId, useLibrary, usePangolinWeb3 } from 'src/hooks';

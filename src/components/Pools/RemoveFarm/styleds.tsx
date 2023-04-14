@@ -1,4 +1,4 @@
-import { ChefType } from '@pangolindex/sdk';
+import { ChefType } from '@oceanswapdefi/sdk';
 import styled from 'styled-components';
 import { Box } from 'src/components';
 

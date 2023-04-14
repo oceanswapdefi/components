@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
 import { TransactionResponse } from '@ethersproject/providers';
 import { parseUnits } from '@ethersproject/units';
-import { JSBI, Pair, Token, TokenAmount } from '@pangolindex/sdk';
+import { JSBI, Pair, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {

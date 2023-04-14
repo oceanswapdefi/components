@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Percent, Token, Trade } from '@pangolindex/sdk';
+import { Currency, CurrencyAmount, Pair, Percent, Token, Trade } from '@oceanswapdefi/sdk';
 import flatMap from 'lodash.flatmap';
 import { useMemo } from 'react';
 import { BASES_TO_CHECK_TRADES_AGAINST, BIPS_BASE, CUSTOM_BASES } from 'src/constants/swap';

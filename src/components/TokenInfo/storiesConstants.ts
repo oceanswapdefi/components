@@ -1,4 +1,4 @@
-import { ChainId, Token, TokenAmount } from '@pangolindex/sdk';
+import { ChainId, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import { ZERO_ADDRESS } from 'src/constants';
 
 export const customToken = new Token(ChainId.AVALANCHE, ZERO_ADDRESS, 18, 'DUMMY', 'DUMMY TOKEN');
@@ -19,7 +19,7 @@ export const argTypes = {
       type: {
         name: 'object',
         summary: 'new Token(...)',
-        detail: `import { ChainId, Token } from '@pangolindex/sdk';\n// chainId = 43314 or ChainId.AVALANCHE \nconst token = new Token(ChainId.AVALANCHE, '0x60781c2586d68229fde47564546784ab3faca982', 18, 'PNG', 'Pangolin');`,
+        detail: `import { ChainId, Token } from '@oceanswapdefi/sdk';\n// chainId = 43314 or ChainId.AVALANCHE \nconst token = new Token(ChainId.AVALANCHE, '0x60781c2586d68229fde47564546784ab3faca982', 18, 'PNG', 'Pangolin');`,
       },
     },
   },
@@ -52,7 +52,7 @@ export const argTypes = {
       type: {
         name: 'object',
         summary: 'new TokenAmount(...)',
-        detail: `import { Token, TokenAmount } from '@pangolindex/sdk';\nconst unclaimedAmount = new TokenAmount(new Token(...), '100000000000000');\n//We recommend to pass the amount according to the connected account provided in the PangolinProvider`,
+        detail: `import { Token, TokenAmount } from '@oceanswapdefi/sdk';\nconst unclaimedAmount = new TokenAmount(new Token(...), '100000000000000');\n//We recommend to pass the amount according to the connected account provided in the PangolinProvider`,
       },
     },
   },
@@ -68,7 +68,7 @@ export const argTypes = {
       type: {
         name: 'object',
         summary: 'new TokenAmount(...)',
-        detail: `import { Token, TokenAmount } from '@pangolindex/sdk'; \nconst circulationSupply = new TokenAmount(new Token(...), '100000000000000');`,
+        detail: `import { Token, TokenAmount } from '@oceanswapdefi/sdk'; \nconst circulationSupply = new TokenAmount(new Token(...), '100000000000000');`,
       },
     },
   },
@@ -84,7 +84,7 @@ export const argTypes = {
       type: {
         name: 'object',
         summary: 'new TokenAmount()',
-        detail: `//This value will override the on chain token total supply provided by erc20.totalSupply() function\nimport { Token, TokenAmount } from '@pangolindex/sdk'; \nconst totalSupply = new TokenAmount(new Token(...), '100000000000000');`,
+        detail: `//This value will override the on chain token total supply provided by erc20.totalSupply() function\nimport { Token, TokenAmount } from '@oceanswapdefi/sdk'; \nconst totalSupply = new TokenAmount(new Token(...), '100000000000000');`,
       },
     },
   },

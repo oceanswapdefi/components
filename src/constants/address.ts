@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { CHAINS, ChainId, ChefType, StakingType, WAVAX } from '@pangolindex/sdk';
+import { CHAINS, ChainId, ChefType, StakingType, WAVAX } from '@oceanswapdefi/sdk';
 import { PNG } from './tokens';
 import { ZERO_ADDRESS } from '.';
 

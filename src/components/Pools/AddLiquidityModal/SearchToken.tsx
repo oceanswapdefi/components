@@ -1,4 +1,4 @@
-import { CAVAX, Currency, WAVAX, currencyEquals } from '@pangolindex/sdk';
+import { CAVAX, Currency, WAVAX, currencyEquals } from '@oceanswapdefi/sdk';
 import React, { useContext } from 'react';
 import { ChevronDown, Plus } from 'react-feather';
 import { useTranslation } from 'react-i18next';

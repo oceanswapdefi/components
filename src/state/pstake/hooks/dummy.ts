@@ -1,4 +1,4 @@
-import { Pair } from '@pangolindex/sdk';
+import { Pair } from '@oceanswapdefi/sdk';
 import { MinichefStakingInfo } from '../types';
 
 /* eslint-disable @typescript-eslint/no-unused-vars */

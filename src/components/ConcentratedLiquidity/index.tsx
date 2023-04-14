@@ -1,4 +1,4 @@
-import { CHAINS, ChainId, Token } from '@pangolindex/sdk';
+import { CHAINS, ChainId, Token } from '@oceanswapdefi/sdk';
 import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Text } from 'src';

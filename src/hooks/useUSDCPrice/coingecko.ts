@@ -1,5 +1,5 @@
 import { parseUnits } from '@ethersproject/units';
-import { Currency, Price } from '@pangolindex/sdk';
+import { Currency, Price } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { USDC } from 'src/constants/tokens';
 import { useCoinGeckoCurrencyPrice } from 'src/state/pcoingecko/hooks';

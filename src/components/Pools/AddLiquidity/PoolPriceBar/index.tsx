@@ -1,4 +1,4 @@
-import { CHAINS, Currency, CurrencyAmount, Percent, Price } from '@pangolindex/sdk';
+import { CHAINS, Currency, CurrencyAmount, Percent, Price } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Stat } from 'src/components';

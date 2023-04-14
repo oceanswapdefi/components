@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId, Pair, Token, TokenAmount } from '@pangolindex/sdk';
+import { ChainId, Pair, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import { useEffect, useMemo, useState } from 'react';
 import { useSubgraphPairs } from 'src/apollo/pairs';
 import { useChainId } from 'src/hooks';

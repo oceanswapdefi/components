@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@pangolindex/sdk';
+import { Token, TokenAmount } from '@oceanswapdefi/sdk';
 
 export interface TokenInfoProps {
   token: Token;

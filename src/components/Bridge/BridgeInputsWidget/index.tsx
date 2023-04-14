@@ -1,4 +1,4 @@
-import { Chain, Currency, NetworkType } from '@pangolindex/sdk';
+import { Chain, Currency, NetworkType } from '@oceanswapdefi/sdk';
 import React, { useCallback, useContext } from 'react';
 import { Info } from 'react-feather';
 import { useTranslation } from 'react-i18next';

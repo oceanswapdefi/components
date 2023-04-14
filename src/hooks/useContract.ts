@@ -3,7 +3,7 @@ import MiniChefV2 from '@pangolindex/exchange-contracts/artifacts/contracts/mini
 import IPangolinPair from '@pangolindex/exchange-contracts/artifacts/contracts/pangolin-core/interfaces/IPangolinPair.sol/IPangolinPair.json';
 import Png from '@pangolindex/exchange-contracts/artifacts/contracts/pangolin-token/Png.sol/Png.json';
 import StakingRewards from '@pangolindex/exchange-contracts/artifacts/contracts/staking-rewards/StakingRewards.sol/StakingRewards.json';
-import { ChainId, WAVAX } from '@pangolindex/sdk';
+import { ChainId, WAVAX } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { ZERO_ADDRESS } from 'src/constants';
 import { ERC20_BYTES32_ABI } from 'src/constants/abis/erc20';

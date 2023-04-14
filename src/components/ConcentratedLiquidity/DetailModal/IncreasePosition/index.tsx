@@ -1,4 +1,4 @@
-import { CHAINS, ChainId, Token } from '@pangolindex/sdk';
+import { CHAINS, ChainId, Token } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import shuffle from 'src/assets/images/shuffle.svg';

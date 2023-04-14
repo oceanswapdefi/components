@@ -1,4 +1,4 @@
-import { BridgeChain, Chain, currencyEquals } from '@pangolindex/sdk';
+import { BridgeChain, Chain, currencyEquals } from '@oceanswapdefi/sdk';
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';

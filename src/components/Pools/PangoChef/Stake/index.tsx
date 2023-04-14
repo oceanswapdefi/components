@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 import { parseUnits } from '@ethersproject/units';
-import { JSBI, Pair, Token, TokenAmount } from '@pangolindex/sdk';
+import { JSBI, Pair, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ThemeContext } from 'styled-components';

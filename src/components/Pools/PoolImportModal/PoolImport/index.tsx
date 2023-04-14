@@ -1,4 +1,4 @@
-import { Currency, JSBI, TokenAmount } from '@pangolindex/sdk';
+import { Currency, JSBI, TokenAmount } from '@oceanswapdefi/sdk';
 import React, { useContext, useEffect } from 'react';
 import { ChevronDown, Plus } from 'react-feather';
 import { useTranslation } from 'react-i18next';

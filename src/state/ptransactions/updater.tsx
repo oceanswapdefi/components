@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { useEffect } from 'react';
 import { useDummyHook } from 'src/hooks/multiChainsHooks';
 import { nearFn } from 'src/utils/near';

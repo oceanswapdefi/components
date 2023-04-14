@@ -1,4 +1,4 @@
-import { Currency, Pair } from '@pangolindex/sdk';
+import { Currency, Pair } from '@oceanswapdefi/sdk';
 import * as React from 'react';
 import { ButtonStyleProps } from '../Button/types';
 import { TextInputProps } from '../TextInput/types';

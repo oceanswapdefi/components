@@ -1,4 +1,4 @@
-import { ChainId, Pair, Token } from '@pangolindex/sdk';
+import { ChainId, Pair, Token } from '@oceanswapdefi/sdk';
 import flatMap from 'lodash.flatmap';
 import { useCallback, useMemo } from 'react';
 import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from 'src/constants';

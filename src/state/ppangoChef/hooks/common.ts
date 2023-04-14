@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { JSBI, Price, Token, TokenAmount, WAVAX } from '@pangolindex/sdk';
+import { JSBI, Price, Token, TokenAmount, WAVAX } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { PNG } from 'src/constants/tokens';
 import { usePair } from 'src/data/Reserves';

@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber';
 import { TransactionResponse } from '@ethersproject/providers';
-import { CAVAX, ChainId, CurrencyAmount, JSBI, Pair, Token, TokenAmount } from '@pangolindex/sdk';
+import { CAVAX, ChainId, CurrencyAmount, JSBI, Pair, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ERC20_INTERFACE from 'src/constants/abis/erc20';

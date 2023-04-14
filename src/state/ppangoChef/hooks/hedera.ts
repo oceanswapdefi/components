@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 import { BigNumber } from '@ethersproject/bignumber';
-import { Fraction, JSBI, Pair, Price, Token, TokenAmount, WAVAX } from '@pangolindex/sdk';
+import { Fraction, JSBI, Pair, Price, Token, TokenAmount, WAVAX } from '@oceanswapdefi/sdk';
 import { getAddress, parseUnits } from 'ethers/lib/utils';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';

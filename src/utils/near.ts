@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import BN from 'bn.js';
 import { baseDecode } from 'borsh';
 import { Contract, providers, transactions, utils } from 'near-api-js';

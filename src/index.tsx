@@ -1,6 +1,6 @@
 import { Web3Provider } from '@ethersproject/providers';
 import { GelatoProvider } from '@gelatonetwork/limit-orders-react';
-import { CHAINS, ChainId } from '@pangolindex/sdk';
+import { CHAINS, ChainId } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { QueryClient, QueryClientProvider } from 'react-query';

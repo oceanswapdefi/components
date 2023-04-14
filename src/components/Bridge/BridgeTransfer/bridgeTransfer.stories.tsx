@@ -1,4 +1,4 @@
-import { CHAINS, ChainId, Token } from '@pangolindex/sdk';
+import { CHAINS, ChainId, Token } from '@oceanswapdefi/sdk';
 import { ComponentStory } from '@storybook/react';
 import React from 'react';
 import { BridgeState, BridgeTransferProps } from './types';

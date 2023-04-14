@@ -1,4 +1,4 @@
-import { AVALANCHE_MAINNET } from '@pangolindex/sdk';
+import { AVALANCHE_MAINNET } from '@oceanswapdefi/sdk';
 import axios from 'axios';
 import qs from 'qs';
 import { useQuery } from 'react-query';

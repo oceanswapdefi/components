@@ -1,4 +1,4 @@
-import { CHAINS, ChefType } from '@pangolindex/sdk';
+import { CHAINS, ChefType } from '@oceanswapdefi/sdk';
 import { BigNumber } from 'ethers';
 import numeral from 'numeral';
 import React, { useContext } from 'react';

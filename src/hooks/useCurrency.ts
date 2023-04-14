@@ -1,4 +1,4 @@
-import { CAVAX, Currency } from '@pangolindex/sdk';
+import { CAVAX, Currency } from '@oceanswapdefi/sdk';
 import { useChainId } from 'src/hooks';
 import { useTokenHook } from 'src/hooks/tokens';
 

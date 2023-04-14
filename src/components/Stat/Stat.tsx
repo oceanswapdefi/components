@@ -1,4 +1,4 @@
-import { Currency, Token, WAVAX } from '@pangolindex/sdk';
+import { Currency, Token, WAVAX } from '@oceanswapdefi/sdk';
 import _uniqueId from 'lodash/uniqueId';
 import React, { useContext, useState } from 'react';
 import { ThemeContext } from 'styled-components';

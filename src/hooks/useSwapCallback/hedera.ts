@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { CAVAX, JSBI, Percent, Router, Trade, TradeType } from '@pangolindex/sdk';
+import { CAVAX, JSBI, Percent, Router, Trade, TradeType } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { INITIAL_ALLOWED_SLIPPAGE } from 'src/constants';
 import { BIPS_BASE } from 'src/constants/swap';

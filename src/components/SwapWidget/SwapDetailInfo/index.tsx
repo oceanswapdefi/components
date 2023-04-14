@@ -1,4 +1,4 @@
-import { Percent, Trade, TradeType } from '@pangolindex/sdk';
+import { Percent, Trade, TradeType } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { INITIAL_ALLOWED_SLIPPAGE, ONE_BIPS } from 'src/constants';

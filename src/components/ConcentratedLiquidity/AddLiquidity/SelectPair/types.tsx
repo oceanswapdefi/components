@@ -1,4 +1,4 @@
-import { Currency } from '@pangolindex/sdk';
+import { Currency } from '@oceanswapdefi/sdk';
 import { TokenField } from '..';
 
 export type SelectPairProps = {

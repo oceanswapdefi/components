@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { AbstractConnector } from '@web3-react/abstract-connector';
 import arrowRightIcon from 'src/assets/images/arrow-right.svg';
 import avalancheCoreIcon from 'src/assets/images/avalancheCore.svg';

@@ -1,4 +1,4 @@
-import { CHAINS, ChainId, Token } from '@pangolindex/sdk';
+import { CHAINS, ChainId, Token } from '@oceanswapdefi/sdk';
 import { Tags, TokenInfo, TokenList } from '@pangolindex/token-lists';
 import { useMemo } from 'react';
 import { AEB_TOKENS } from 'src/constants/lists';

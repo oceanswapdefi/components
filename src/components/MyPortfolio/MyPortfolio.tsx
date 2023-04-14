@@ -1,4 +1,4 @@
-import { ALL_CHAINS, CHAINS, Chain } from '@pangolindex/sdk';
+import { ALL_CHAINS, CHAINS, Chain } from '@oceanswapdefi/sdk';
 import React, { useCallback, useEffect, useState } from 'react';
 import Scrollbars from 'react-custom-scrollbars';
 import { useTranslation } from 'react-i18next';
