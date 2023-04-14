@@ -11,7 +11,7 @@ or
 
 #### Install below dependancies as its peer dependancies
 ```
-@pangolindex/sdk
+@oceanswapdefi/sdk
 @gelatonetwork/limit-orders-react@2.4.0
 @web3-react/core
 @web3-react/fortmatic-connector

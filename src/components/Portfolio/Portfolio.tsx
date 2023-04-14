@@ -1,6 +1,6 @@
-import { ALL_CHAINS } from '@pangolindex/sdk';
+import { ALL_CHAINS } from '@oceanswapdefi/sdk';
 import React, { useCallback, useContext, useState } from 'react';
-import Scrollbars from 'react-custom-scrollbars';
+import Scrollbars from 'react-custom-scrollbars-2';
 import { Lock } from 'react-feather';
 import { ThemeContext } from 'styled-components';
 import { usePangolinWeb3 } from 'src/hooks';

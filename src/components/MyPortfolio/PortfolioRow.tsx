@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@pangolindex/sdk';
+import { ChainId, Token } from '@oceanswapdefi/sdk';
 import React, { useCallback, useContext } from 'react';
 import { HelpCircle, Lock } from 'react-feather';
 import { ThemeContext } from 'styled-components';
@@ -33,7 +33,7 @@ const PortfolioRow: React.FC<Props> = ({ coin, pair, showBalances }) => {
 
   const renderLogo = (size) => {
     if (coin) {
-      if ((coin.token instanceof Token && coin.token.chainId == ChainId.AVALANCHE) || !(coin.token instanceof Token)) {
+      if ((coin.token instanceof Token && coin.token.chainId == ChainId.PULSE_TESTNET) || !(coin.token instanceof Token)) {
         return <CurrencyLogo size={size} currency={coin.token} />;
       } else if (coin?.logo) {
         return <StyledLogo srcs={[coin.logo]} size={`${size}px`} />;
@@ -41,7 +41,7 @@ const PortfolioRow: React.FC<Props> = ({ coin, pair, showBalances }) => {
     }
 
     if (pair) {
-      if (pair?.pair?.chainId == ChainId.AVALANCHE) {
+      if (pair?.pair?.chainId == ChainId.PULSE_TESTNET) {
         return <DoubleCurrencyLogo currency0={pair?.pair?.token0} currency1={pair?.pair?.token1} size={24} />;
       } else if (pair.logos) {
         return (

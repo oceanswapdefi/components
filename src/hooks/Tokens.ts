@@ -1,12 +1,11 @@
 import { parseBytes32String } from '@ethersproject/strings';
-import { CAVAX, CHAINS, ChainId, Currency, Token } from '@pangolindex/sdk';
+import { CAVAX, CHAINS, ChainId, Currency, Token } from '@oceanswapdefi/sdk';
 import { useEffect, useMemo, useState } from 'react';
 import { COINGEKO_BASE_URL } from 'src/constants';
 import { useSelectedTokenList } from 'src/state/plists/hooks';
 import { NEVER_RELOAD, useSingleCallResult } from 'src/state/pmulticall/hooks';
 import { useUserAddedTokens } from 'src/state/puser/hooks';
 import { isAddress } from 'src/utils';
-import { nearFn } from 'src/utils/near';
 import { useTokenHook } from './multiChainsHooks';
 import { useBytes32TokenContract, useTokenContract } from './useContract';
 import { useChainId } from './index';
@@ -42,14 +41,6 @@ function parseStringOrBytes32(str: string | undefined, bytes32: string | undefin
     : bytes32 && BYTES32_REGEX.test(bytes32)
     ? parseBytes32String(bytes32)
     : defaultValue;
-}
-
-export interface NearTokenMetadata {
-  id: string;
-  name: string;
-  symbol: string;
-  decimals: number;
-  icon: string;
 }
 
 // undefined if invalid or does not exist
@@ -110,40 +101,6 @@ export function useToken(tokenAddress?: string): Token | undefined | null {
   ]);
 }
 
-export function useNearToken(tokenAddress?: string): Token | undefined | null {
-  const [tokenData, setTokenData] = useState<NearTokenMetadata>();
-
-  const chainId = useChainId();
-  const tokens = useAllTokens();
-
-  const address = tokenAddress;
-
-  const token: Token | undefined = address ? tokens[address] : undefined;
-
-  useEffect(() => {
-    async function getTokenData() {
-      if (address) {
-        const tokenMetaData = await nearFn.getMetadata(address);
-
-        setTokenData(tokenMetaData);
-      }
-    }
-
-    getTokenData();
-  }, [address]);
-
-  return useMemo(() => {
-    if (token) return token;
-    if (!chainId || !address) return undefined;
-
-    if (tokenData) {
-      return new Token(chainId, address, tokenData?.decimals, tokenData?.symbol, tokenData?.name);
-    }
-
-    return undefined;
-  }, [address, chainId, token, tokenData]);
-}
-
 export function useCurrency(currencyId: string | undefined): Currency | null | undefined {
   const chainId = useChainId();
   const isAVAX = currencyId?.toUpperCase() === 'AVAX';
@@ -158,7 +115,7 @@ export function useCoinGeckoTokenPrice(coin: Token) {
   useEffect(() => {
     const getCoinPriceData = async () => {
       try {
-        const chain = coin.chainId === 43113 ? CHAINS[ChainId.AVALANCHE] : CHAINS[coin.chainId];
+        const chain = coin.chainId === 942 ? CHAINS[ChainId.PULSE_TESTNET] : CHAINS[coin.chainId];
 
         const url = `${COINGEKO_BASE_URL}simple/token_price/${
           chain.coingecko_id
@@ -185,7 +142,7 @@ export function useCoinGeckoTokenPriceChart(coin: Token, days = '7') {
   useEffect(() => {
     const getCoinData = async () => {
       try {
-        const chain = coin.chainId === 43113 ? CHAINS[ChainId.AVALANCHE] : CHAINS[coin.chainId];
+        const chain = coin.chainId === 942 ? CHAINS[ChainId.PULSE_TESTNET] : CHAINS[coin.chainId];
 
         const url = `${COINGEKO_BASE_URL}coins/${
           chain.coingecko_id

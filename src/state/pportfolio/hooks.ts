@@ -1,4 +1,4 @@
-import { ALL_CHAINS, AVALANCHE_MAINNET, CAVAX, ChainId, Currency, Pair, Token, TokenAmount } from '@pangolindex/sdk';
+import { ALL_CHAINS, AVALANCHE_MAINNET, CAVAX, ChainId, Currency, Pair, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import axios from 'axios';
 import qs from 'qs';
 import { useQuery } from 'react-query';
@@ -194,7 +194,7 @@ export function useGetWalletChainTokens(chainId: number) {
           );
         });
 
-      if (chainId === ChainId.AVALANCHE) {
+      if (chainId === ChainId.PULSE_TESTNET) {
         const pairs = await getPangolinPairs();
         requestTokens = [...requestTokens, ...pairs];
       }

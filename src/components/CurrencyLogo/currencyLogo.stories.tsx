@@ -1,4 +1,4 @@
-import { CAVAX, ChainId } from '@pangolindex/sdk';
+import { CAVAX, ChainId } from '@oceanswapdefi/sdk';
 import { ComponentStory } from '@storybook/react';
 import React from 'react';
 import CurrencyLogo from '.';
@@ -13,5 +13,5 @@ const TemplateBox: ComponentStory<typeof CurrencyLogo> = (args: any) => <Currenc
 export const DoubleLogo = TemplateBox.bind({});
 DoubleLogo.args = {
   size: 24,
-  currency: CAVAX[ChainId.AVALANCHE],
+  currency: CAVAX[ChainId.PULSE_TESTNET],
 };

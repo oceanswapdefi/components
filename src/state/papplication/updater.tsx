@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useDispatch } from 'react-redux';
@@ -6,28 +6,6 @@ import { useChainId, useLibrary, usePangolinWeb3 } from 'src/hooks';
 import useDebounce from 'src/hooks/useDebounce';
 import useIsWindowVisible from 'src/hooks/useIsWindowVisible';
 import { updateBlockNumber } from './actions';
-
-const NearApplicationUpdater = () => {
-  const chainId = useChainId();
-  const { provider } = useLibrary();
-  const dispatch = useDispatch();
-
-  const { data: blockNumber } = useQuery(
-    'get-block',
-    () => {
-      return provider?.getBlockNumber();
-    },
-    { enabled: !!provider, refetchInterval: 10 * 1000 },
-  );
-
-  useEffect(() => {
-    if (blockNumber) {
-      dispatch(updateBlockNumber({ chainId, blockNumber }));
-    }
-  }, [blockNumber]);
-
-  return null;
-};
 
 export const EvmApplicationUpdater = () => {
   const { chainId } = usePangolinWeb3();
@@ -82,12 +60,7 @@ export const EvmApplicationUpdater = () => {
 };
 
 const updaterMapping: { [chainId in ChainId]: () => null } = {
-  [ChainId.AVALANCHE]: EvmApplicationUpdater,
-  [ChainId.FUJI]: EvmApplicationUpdater,
-  [ChainId.COSTON]: EvmApplicationUpdater,
-  [ChainId.WAGMI]: EvmApplicationUpdater,
-  [ChainId.NEAR_MAINNET]: NearApplicationUpdater,
-  [ChainId.NEAR_TESTNET]: NearApplicationUpdater,
+  [ChainId.PULSE_TESTNET]: EvmApplicationUpdater,
 };
 
 export default function ApplicationUpdater() {

@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import React, { useCallback, useState } from 'react';
 import { Link } from 'react-feather';
 import { Line, LineChart, ResponsiveContainer, Tooltip } from 'recharts';

@@ -13,7 +13,7 @@ import {
   Token,
   TokenAmount,
   Trade,
-} from '@pangolindex/sdk';
+} from '@oceanswapdefi/sdk';
 import { ParsedQs } from 'qs';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -89,7 +89,7 @@ export function useSwapActionHandlers(chainId: ChainId): {
 export function tryParseAmount(
   value?: string,
   currency?: Currency,
-  chainId: ChainId = ChainId.AVALANCHE,
+  chainId: ChainId = ChainId.PULSE_TESTNET,
 ): CurrencyAmount | undefined {
   if (!value || !currency) {
     return undefined;
@@ -110,8 +110,8 @@ export function tryParseAmount(
 }
 
 const BAD_RECIPIENT_ADDRESSES: string[] = [
-  FACTORY_ADDRESS[ChainId.AVALANCHE], // v2 factory
-  ROUTER_ADDRESS[ChainId.AVALANCHE], // v2 router 02
+  FACTORY_ADDRESS[ChainId.PULSE_TESTNET], // v2 factory
+  ROUTER_ADDRESS[ChainId.PULSE_TESTNET], // v2 router 02
 ];
 
 /**

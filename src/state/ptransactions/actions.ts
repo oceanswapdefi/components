@@ -1,4 +1,4 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { createAction } from '@reduxjs/toolkit';
 
 export interface SerializableTransactionReceipt {

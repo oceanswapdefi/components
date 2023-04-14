@@ -1,6 +1,6 @@
 import { formatUnits } from '@ethersproject/units';
 import { useGasOverhead, useGelatoLimitOrders, useGelatoLimitOrdersLib } from '@gelatonetwork/limit-orders-react';
-import { TokenAmount } from '@pangolindex/sdk';
+import { TokenAmount } from '@oceanswapdefi/sdk';
 import React, { useMemo } from 'react';
 import { INITIAL_ALLOWED_SLIPPAGE } from 'src/constants';
 import { usePangolinWeb3 } from 'src/hooks';

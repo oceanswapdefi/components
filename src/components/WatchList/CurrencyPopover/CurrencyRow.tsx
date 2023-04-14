@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import React, { useCallback } from 'react';
 import { Box, Button, CurrencyLogo, Text } from 'src/components';
 import { useChainId } from 'src/hooks';

@@ -1,5 +1,5 @@
 import { Web3Provider as Web3ProviderEthers } from '@ethersproject/providers';
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { useWeb3React } from '@web3-react/core';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import type { FC, ReactNode } from 'react';
@@ -45,7 +45,7 @@ export const PangolinWeb3Provider: FC<Web3ProviderProps> = ({
   useEffect(() => {
     setState({
       library,
-      chainId: chainId || ChainId.AVALANCHE,
+      chainId: chainId || ChainId.PULSE_TESTNET,
       account,
     });
   }, [library, chainId, account]);
@@ -65,7 +65,7 @@ export default Web3Context;
 
 export const useChainId = () => {
   const { chainId } = usePangolinWeb3();
-  return chainId || ChainId.AVALANCHE;
+  return chainId || ChainId.PULSE_TESTNET;
 };
 
 export function useLibrary(): { library: any; provider: any } {

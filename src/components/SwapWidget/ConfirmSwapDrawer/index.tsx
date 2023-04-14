@@ -1,4 +1,4 @@
-import { Trade, TradeType } from '@pangolindex/sdk';
+import { Trade, TradeType } from '@oceanswapdefi/sdk';
 import React, { useContext, useMemo } from 'react';
 import { AlertTriangle, ArrowDown, ArrowUpCircle } from 'react-feather';
 import { ThemeContext } from 'styled-components';

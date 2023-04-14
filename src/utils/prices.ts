@@ -1,4 +1,4 @@
-import { CurrencyAmount, Fraction, JSBI, Percent, TokenAmount, Trade } from '@pangolindex/sdk';
+import { CurrencyAmount, Fraction, JSBI, Percent, TokenAmount, Trade } from '@oceanswapdefi/sdk';
 import {
   ALLOWED_PRICE_IMPACT_HIGH,
   ALLOWED_PRICE_IMPACT_LOW,

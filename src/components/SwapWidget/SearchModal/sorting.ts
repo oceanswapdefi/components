@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@pangolindex/sdk';
+import { Token, TokenAmount } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { useAllTokenBalances } from 'src/state/pwallet/hooks';
 

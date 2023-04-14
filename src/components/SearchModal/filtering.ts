@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import { isAddress } from 'src/utils';
 
 export function filterTokens(tokens: Token[], search: string): Token[] {

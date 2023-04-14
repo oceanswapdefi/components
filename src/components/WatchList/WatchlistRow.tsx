@@ -1,4 +1,4 @@
-import { Token } from '@pangolindex/sdk';
+import { Token } from '@oceanswapdefi/sdk';
 import React, { useContext, useEffect, useState } from 'react';
 import { X } from 'react-feather';
 import { useDispatch } from 'react-redux';

@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import Scrollbars from 'react-custom-scrollbars';
+import Scrollbars from 'react-custom-scrollbars-2';
 import { ArrowLeft, ArrowRight } from 'react-feather';
 import ReactMarkdown from 'react-markdown';
 import Slider, { Settings } from 'react-slick';

@@ -1,4 +1,4 @@
-import { CAVAX, ChainId, Currency, Token } from '@pangolindex/sdk';
+import { CAVAX, ChainId, Currency, Token } from '@oceanswapdefi/sdk';
 import deepEqual from 'deep-equal';
 import React, { useMemo } from 'react';
 import { AvaxLogo, CflrLogo, WgmLogo } from 'src/components/Icons';
@@ -22,7 +22,7 @@ export default function CurrencyLogo({
 
   const srcs: string[] = useMemo(() => {
     if (
-      currency === CAVAX[ChainId.AVALANCHE] ||
+      currency === CAVAX[ChainId.PULSE_TESTNET] ||
       currency === CAVAX[ChainId.WAGMI] ||
       currency === CAVAX[ChainId.COSTON]
     )
@@ -36,7 +36,7 @@ export default function CurrencyLogo({
     return [];
   }, [currency]);
 
-  if (deepEqual(currency, CAVAX[ChainId.AVALANCHE])) {
+  if (deepEqual(currency, CAVAX[ChainId.PULSE_TESTNET])) {
     return <AvaxLogo size={`${size}px`} />;
   } else if (deepEqual(currency, CAVAX[ChainId.WAGMI])) {
     return <WgmLogo size={`${size}px`} />;

@@ -1,7 +1,7 @@
 import { MaxUint256 } from '@ethersproject/constants';
 import { TransactionResponse } from '@ethersproject/providers';
 import { useGelatoLimitOrdersLib } from '@gelatonetwork/limit-orders-react';
-import { CAVAX, ChainId, CurrencyAmount, TokenAmount, Trade } from '@pangolindex/sdk';
+import { CAVAX, ChainId, CurrencyAmount, TokenAmount, Trade } from '@oceanswapdefi/sdk';
 import { useCallback, useMemo } from 'react';
 import { ROUTER_ADDRESS } from 'src/constants';
 import { useTokenAllowance } from 'src/data/Allowances';
@@ -109,17 +109,8 @@ export function useApproveCallbackFromTrade(chainId: ChainId, trade?: Trade, all
   return useApproveCallback(
     chainId,
     amountToApprove,
-    chainId ? ROUTER_ADDRESS[chainId] : ROUTER_ADDRESS[ChainId.AVALANCHE],
+    chainId ? ROUTER_ADDRESS[chainId] : ROUTER_ADDRESS[ChainId.PULSE_TESTNET],
   );
-}
-
-//TODO:  Near Swap Approve dummy hook
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function useApproveCallbackFromNearTrade(_chainId: ChainId, _trade?: Trade, _allowedSlippage = 0) {
-  const approve = () => {
-    return Promise.resolve(42);
-  };
-  return [ApprovalState.APPROVED, approve];
 }
 
 // wraps useApproveCallback in the context of a swap

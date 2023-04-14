@@ -1,8 +1,7 @@
-import { ChainId } from '@pangolindex/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import { AnyAction } from '@reduxjs/toolkit';
 import { Dispatch, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { nearFn } from 'src/utils/near';
 import { useChainId, useLibrary } from '../../hooks';
 import { AppDispatch, AppState } from '../index';
 import { useAddPopup, useBlockNumber } from '../papplication/hooks';
@@ -49,43 +48,8 @@ const txChecker = (_params: TxCheckerProps) => {
   // This is intentional as this is just dummy function to support for evm chains
 };
 
-const NEAR_TX_HASH_PARAM = 'transactionHashes';
-/**
- * this method is used to check transaction hashes in url and if found then get summary of that transaction and add it to the reducer
- * @returns txChecker function
- */
-const nearTxChecker = async ({ transactions, dispatch, chainId }) => {
-  const search = window.location.search;
-  // get transactionHashes from url
-  const txHashes = new URLSearchParams(search).get(NEAR_TX_HASH_PARAM)?.split(',') || [];
-  const txHash = txHashes?.length > 0 ? txHashes?.[txHashes?.length - 1] : '';
-  if (txHash) {
-    // get tx details using near sdk
-    const tx = await nearFn?.getTransaction(txHash);
-    if (tx) {
-      // get tx summary
-      const summary = nearFn.getTranctionSummary(tx);
-      const exists = !!transactions[txHash];
-      // if hash doesn't exist then only add it to redux
-      if (!exists) {
-        dispatch(addTransaction({ hash: txHash, from: nearFn.getAccountId(), chainId, summary }));
-      }
-    }
-
-    // remove transactionHashes from url without refreshing page
-    const currentUrl = new URL(window.location.href);
-    currentUrl.searchParams.delete(NEAR_TX_HASH_PARAM);
-    window.history.replaceState({}, document.title, currentUrl.toString());
-  }
-};
-
 const txCheckerMapping: { [chainId in ChainId]: (params: TxCheckerProps) => void } = {
-  [ChainId.AVALANCHE]: txChecker,
-  [ChainId.FUJI]: txChecker,
-  [ChainId.COSTON]: txChecker,
-  [ChainId.WAGMI]: txChecker,
-  [ChainId.NEAR_MAINNET]: nearTxChecker,
-  [ChainId.NEAR_TESTNET]: nearTxChecker,
+  [ChainId.PULSE_TESTNET]: txChecker,
 };
 
 export default function Updater(): null {

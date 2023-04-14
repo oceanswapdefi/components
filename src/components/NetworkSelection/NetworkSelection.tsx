@@ -1,6 +1,6 @@
-import { ALL_CHAINS, Chain } from '@pangolindex/sdk';
+import { ALL_CHAINS, Chain } from '@oceanswapdefi/sdk';
 import React, { useEffect, useState } from 'react';
-import { Scrollbars } from 'react-custom-scrollbars';
+import { Scrollbars } from 'react-custom-scrollbars-2';
 import { Box, Modal, Text, ToggleButtons } from 'src/components';
 import { ButtonFrame, ChainButton, ChainsList, CloseButton, Frame, Logo } from './styled';
 import { NetworkProps } from './types';

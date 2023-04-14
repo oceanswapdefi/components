@@ -1,6 +1,6 @@
-import { CHAINS, ChainId, Token } from '@pangolindex/sdk';
+import { CHAINS, ChainId, Token } from '@oceanswapdefi/sdk';
 import React, { useContext, useMemo, useRef, useState } from 'react';
-import Scrollbars from 'react-custom-scrollbars';
+import Scrollbars from 'react-custom-scrollbars-2';
 import { Plus } from 'react-feather';
 import { ThemeContext } from 'styled-components';
 import { Box, Button, ShowMore } from 'src/components';
@@ -29,7 +29,7 @@ const WatchList: React.FC<Props> = ({
   tradeLinkUrl,
   redirect = false,
 }) => {
-  const { chainId = ChainId.AVALANCHE } = usePangolinWeb3();
+  const { chainId = ChainId.PULSE_TESTNET } = usePangolinWeb3();
   const [showMore, setShowMore] = useState(false as boolean);
   const allTokens = useAllTokens();
 

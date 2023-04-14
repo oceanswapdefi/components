@@ -1,4 +1,4 @@
-import { CAVAX, ChainId, Currency, Token, WAVAX } from '@pangolindex/sdk';
+import { CAVAX, ChainId, Currency, Token, WAVAX } from '@oceanswapdefi/sdk';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import AutoSizer from 'react-virtualized-auto-sizer';

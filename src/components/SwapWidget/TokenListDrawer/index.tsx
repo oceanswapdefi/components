@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import Scrollbars from 'react-custom-scrollbars';
+import Scrollbars from 'react-custom-scrollbars-2';
 import ReactGA from 'react-ga';
 import { useDispatch, useSelector } from 'react-redux';
 import Drawer from 'src/components/Drawer';

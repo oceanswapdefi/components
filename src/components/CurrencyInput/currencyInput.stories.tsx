@@ -1,4 +1,4 @@
-import { CHAINS, ChainId, Token } from '@pangolindex/sdk';
+import { CHAINS, ChainId, Token } from '@oceanswapdefi/sdk';
 import { ComponentStory } from '@storybook/react';
 import React from 'react';
 import { CurrencyInput } from '.';
@@ -14,10 +14,10 @@ export const Default = TemplateCurrencyInput.bind({});
 Default.args = {
   label: 'To',
   currency: new Token(
-    ChainId.AVALANCHE,
-    CHAINS[ChainId.AVALANCHE].contracts!.png,
+    ChainId.PULSE_TESTNET,
+    CHAINS[ChainId.PULSE_TESTNET].contracts!.png,
     18,
-    CHAINS[ChainId.AVALANCHE].png_symbol!,
+    CHAINS[ChainId.PULSE_TESTNET].png_symbol!,
     'Pangolin',
   ),
 };

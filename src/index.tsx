@@ -1,5 +1,5 @@
 import { GelatoProvider } from '@gelatonetwork/limit-orders-react';
-import { CHAINS, ChainId } from '@pangolindex/sdk';
+import { CHAINS, ChainId } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import SelectTokenDrawer from 'src/components/SwapWidget/SelectTokenDrawer';
@@ -17,7 +17,6 @@ import {
 import { useAllTransactions } from 'src/state/ptransactions/hooks';
 import { useAccountBalanceHook } from 'src/state/pwallet/multiChainsHooks';
 import { shortenAddress } from 'src/utils';
-import { nearFn } from 'src/utils/near';
 import useUSDCPrice from 'src/utils/useUSDCPrice';
 import { wrappedCurrency } from 'src/utils/wrappedCurrency';
 import { PANGOLIN_PERSISTED_KEYS, pangolinReducers } from './state';
@@ -30,7 +29,7 @@ import { default as ThemeProvider } from './theme';
 const queryClient = new QueryClient();
 
 export function PangolinProvider({
-  chainId = ChainId.AVALANCHE,
+  chainId = ChainId.PULSE_TESTNET,
   library,
   children,
   account,
@@ -102,4 +101,4 @@ export {
 export { transactionActions };
 
 // misc
-export { pangolinReducers, PANGOLIN_PERSISTED_KEYS, wrappedCurrency, nearFn };
+export { pangolinReducers, PANGOLIN_PERSISTED_KEYS, wrappedCurrency };

@@ -1,5 +1,5 @@
 // TODO: Actually calculate price
-import { ChainId, Currency, JSBI, Price, WAVAX, currencyEquals } from '@pangolindex/sdk';
+import { ChainId, Currency, JSBI, Price, WAVAX, currencyEquals } from '@oceanswapdefi/sdk';
 import { useMemo } from 'react';
 import { USDCe } from 'src/constants';
 import { PairState, usePairs } from '../data/Reserves';
@@ -20,8 +20,8 @@ export default function useUSDCPrice(currency?: Currency): Price | undefined {
         chainId && wrapped && currencyEquals(WAVAX[chainId], wrapped) ? undefined : currency,
         chainId ? WAVAX[chainId] : undefined,
       ],
-      [wrapped?.equals(USDC) ? undefined : wrapped, chainId === ChainId.AVALANCHE ? USDC : undefined],
-      [chainId ? WAVAX[chainId] : undefined, chainId === ChainId.AVALANCHE ? USDC : undefined],
+      [wrapped?.equals(USDC) ? undefined : wrapped, chainId === ChainId.PULSE_TESTNET ? USDC : undefined],
+      [chainId ? WAVAX[chainId] : undefined, chainId === ChainId.PULSE_TESTNET ? USDC : undefined],
     ],
     [chainId, currency, wrapped, USDC],
   );

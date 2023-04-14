@@ -1,4 +1,4 @@
-import { CHAINS, ChainId, Token } from '@pangolindex/sdk';
+import { CHAINS, ChainId, Token } from '@oceanswapdefi/sdk';
 import { Tags, TokenInfo, TokenList } from '@pangolindex/token-lists';
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
@@ -34,12 +34,7 @@ export type TokenAddressMap = Readonly<{
  * An empty result, useful as a default.
  */
 const EMPTY_LIST: TokenAddressMap = {
-  [ChainId.FUJI]: {},
-  [ChainId.AVALANCHE]: {},
-  [ChainId.WAGMI]: {},
-  [ChainId.COSTON]: {},
-  [ChainId.NEAR_MAINNET]: {},
-  [ChainId.NEAR_TESTNET]: {},
+  [ChainId.PULSE_TESTNET]: {},
 };
 
 const listCache: WeakMap<TokenList, TokenAddressMap> | null =
