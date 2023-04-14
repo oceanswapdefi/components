@@ -1,4 +1,4 @@
-import { ALL_CHAINS, AVALANCHE_MAINNET, CAVAX, ChainId, Currency, Pair, Token, TokenAmount } from '@oceanswapdefi/sdk';
+import { ALL_CHAINS, PULSE_TESTNET, CAVAX, ChainId, Currency, Pair, Token, TokenAmount } from '@oceanswapdefi/sdk';
 import axios from 'axios';
 import qs from 'qs';
 import { useQuery } from 'react-query';
@@ -153,7 +153,7 @@ export function useGetWalletChainTokens(chainId: number) {
   const getTokens = async () => {
     if (account) {
       if (!chain || !chain.mainnet) {
-        chain = AVALANCHE_MAINNET;
+        chain = PULSE_TESTNET;
       }
 
       const query = qs.stringify(

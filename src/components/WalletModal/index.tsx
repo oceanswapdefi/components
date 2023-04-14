@@ -8,7 +8,7 @@ import { isMobile } from 'react-device-detect';
 import ReactGA from 'react-ga';
 import { Button } from 'src/components/Button';
 import { gnosisSafe, injected, xDefi } from 'src/connectors';
-import { AVALANCHE_CHAIN_PARAMS, IS_IN_IFRAME, LANDING_PAGE, SUPPORTED_WALLETS, WalletInfo } from 'src/constants';
+import { PULSE_TESTNET_CHAIN_PARAMS, IS_IN_IFRAME, LANDING_PAGE, SUPPORTED_WALLETS, WalletInfo } from 'src/constants';
 import { ExternalLink } from 'src/theme';
 import { Box, Modal, ToggleButtons } from '../../';
 import Option from './Option';
@@ -82,12 +82,12 @@ const WalletModal: React.FC<WalletModalProps> = ({
     }
   }, [walletType]);
 
-  function addAvalancheNetwork() {
+  function addPulseNetwork() {
     injected.getProvider().then((provider) => {
       provider
         ?.request({
           method: 'wallet_addEthereumChain',
-          params: [AVALANCHE_CHAIN_PARAMS],
+          params: [PULSE_TESTNET_CHAIN_PARAMS],
         })
         .then(() => {
           onWalletConnect();
@@ -161,7 +161,7 @@ const WalletModal: React.FC<WalletModalProps> = ({
       activate(activationConnector, undefined, true)
         .then(() => {
           if (isCbWallet) {
-            addAvalancheNetwork();
+            addPulseNetwork();
           } else {
             onWalletConnect();
           }
@@ -362,10 +362,10 @@ const WalletModal: React.FC<WalletModalProps> = ({
         <ContentWrapper>
           {web3Error instanceof UnsupportedChainIdError ? (
             <>
-              <h5>Please connect to the appropriate Avalanche network.</h5>
+              <h5>Please connect to the appropriate Pulse network.</h5>
               {isMetamaskOrCbWallet && (
-                <Button variant="primary" onClick={addAvalancheNetwork}>
-                  Switch to Avalanche Chain
+                <Button variant="primary" onClick={addPulseNetwork}>
+                  Switch to Pulse Chain
                 </Button>
               )}
             </>
@@ -401,7 +401,7 @@ const WalletModal: React.FC<WalletModalProps> = ({
           )}
           {walletView !== WALLET_VIEWS.PENDING && (
             <Blurb>
-              <span>New to Avalanche? &nbsp;</span>{' '}
+              <span>New to Pulse? &nbsp;</span>{' '}
               <ExternalLink href={WALLET_TUTORIAL}>Learn more about setting up a wallet</ExternalLink>
             </Blurb>
           )}

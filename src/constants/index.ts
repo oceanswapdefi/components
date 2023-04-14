@@ -197,7 +197,7 @@ export const TIMEFRAME = [
 
 export const SUBGRAPH_BASE_URL = `https://api.thegraph.com/subgraphs/name/pangolindex`;
 
-export const LANDING_PAGE = 'https://pangolin.exchange';
+export const LANDING_PAGE = 'https://oceanswap.org';
 
 export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   INJECTED: {
@@ -276,16 +276,16 @@ export const PROVIDER_MAPPING = {
   RABBY: CommonEVMProvider,
 };
 
-export const AVALANCHE_CHAIN_PARAMS = {
-  chainId: '0xa86a', // A 0x-prefixed hexadecimal chainId
-  chainName: 'Avalanche Mainnet C-Chain',
+export const PULSE_TESTNET_CHAIN_PARAMS = {
+  chainId: '0x3ae', // 0x3ae = 942
+  chainName: 'Pulsechain Testnet V3',
   nativeCurrency: {
-    name: 'Avalanche',
-    symbol: 'AVAX',
+    name: 'Pulse',
+    symbol: 'PLS',
     decimals: 18,
   },
-  rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
-  blockExplorerUrls: ['https://snowtrace.io//'],
+  rpcUrls: ['https://rpc.v3.testnet.pulsechain.com'],
+  blockExplorerUrls: ['https://scan.v3.testnet.pulsechain.com'],
 };
 export const IS_IN_IFRAME = window.parent !== window;
 

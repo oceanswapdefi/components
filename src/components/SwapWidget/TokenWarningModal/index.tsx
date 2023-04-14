@@ -84,7 +84,7 @@ export default function TokenWarningModal({
             </Text>
           </Box>
           <Text color={'red2'} fontSize={16}>
-            Anyone can create an ERC-20 token on Avalanche with <em>any</em> name, including creating fake versions of
+            Anyone can create an ERC-20 token on Pulse with <em>any</em> name, including creating fake versions of
             existing tokens and tokens that claim to represent projects that do not have a token.
           </Text>
           <Text color={'red2'} fontSize={16}>
