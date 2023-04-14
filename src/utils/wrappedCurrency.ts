@@ -9,17 +9,6 @@ function convertToPangolinToken(token: UniToken): Token {
   return new Token(token.chainId, token.address, token.decimals, token?.symbol, token?.name);
 }
 
-export function wrappedGelatoCurrency(
-  currency: UniCurrency | UniToken,
-  chainId: ChainId | undefined,
-): Token | undefined {
-  return chainId && !currency?.isToken
-    ? WAVAX[chainId]
-    : currency.isToken
-    ? convertToPangolinToken(currency)
-    : undefined;
-}
-
 export function unwrappedToken(token: Token, chainId: ChainId): Currency | Token {
   if (token?.equals?.(WAVAX[token.chainId])) return CAVAX[chainId];
   return token;

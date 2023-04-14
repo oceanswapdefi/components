@@ -12,7 +12,6 @@ or
 #### Install below dependancies as its peer dependancies
 ```
 @oceanswapdefi/sdk
-@gelatonetwork/limit-orders-react@2.4.0
 @web3-react/core
 @web3-react/fortmatic-connector
 @web3-react/portis-connector

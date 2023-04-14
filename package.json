@@ -131,7 +131,6 @@
     "yalc": "^1.0.0-pre.53"
   },
   "peerDependencies": {
-    "@gelatonetwork/limit-orders-react": "^2.3.1",
     "@gnosis.pm/safe-apps-web3-react": "^0.6.7",
     "@oceanswapdefi/sdk": "^0.0.6",
     "@pangolindex/web3-react-injected-connector": "^1.0.0",

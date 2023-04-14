@@ -1,6 +1,5 @@
 /* eslint-disable max-lines */
 import { parseUnits } from '@ethersproject/units';
-import { Order, useGelatoLimitOrdersHistory, useGelatoLimitOrdersLib } from '@gelatonetwork/limit-orders-react';
 import {
   CAVAX,
   CHAINS,
@@ -31,10 +30,6 @@ import { useUserSlippageTolerance } from '../puser/hooks';
 import { useCurrencyBalances } from '../pwallet/hooks';
 import { Field, replaceSwapState, selectCurrency, setRecipient, switchCurrencies, typeInput } from './actions';
 import { SwapState } from './reducer';
-
-export interface LimitOrderInfo extends Order {
-  pending?: boolean;
-}
 
 export function useSwapState(): AppState['pswap'] {
   return useSelector<AppState, AppState['pswap']>((state) => state.pswap);
@@ -339,104 +334,5 @@ export function useDefaultsFromURLSearch():
   }, [dispatch, chainId]);
 
   return result;
-}
-
-export function useGelatoLimitOrderDetail(order: Order) {
-  const { chainId } = usePangolinWeb3();
-  const gelatoLibrary = useGelatoLimitOrdersLib();
-
-  const inputCurrency = order.inputToken === NATIVE && chainId ? 'AVAX' : order.inputToken;
-  const outputCurrency = order.outputToken === NATIVE && chainId ? 'AVAX' : order.outputToken;
-
-  const currency0 = useCurrency(inputCurrency);
-  const currency1 = useCurrency(outputCurrency);
-
-  const inputToken = currency0 ? wrappedCurrency(currency0, chainId) : undefined;
-  const outputToken = currency1 ? wrappedCurrency(currency1, chainId) : undefined;
-
-  const inputAmount = useMemo(
-    () => (inputToken && order.inputAmount ? new TokenAmount(inputToken, order.inputAmount) : undefined),
-    [inputToken, order.inputAmount],
-  );
-
-  const rawMinReturn = useMemo(
-    () =>
-      order.adjustedMinReturn
-        ? order.adjustedMinReturn
-        : gelatoLibrary && chainId && order.minReturn
-        ? gelatoLibrary.getAdjustedMinReturn(order.minReturn)
-        : undefined,
-    [chainId, gelatoLibrary, order.adjustedMinReturn, order.minReturn],
-  );
-
-  const outputAmount = useMemo(
-    () => (outputToken && rawMinReturn ? new TokenAmount(outputToken, rawMinReturn) : undefined),
-    [outputToken, rawMinReturn],
-  );
-
-  const executionPrice = useMemo(
-    () =>
-      outputAmount && outputAmount.greaterThan('0') && inputAmount && currency0 && currency1
-        ? new Price(currency0, currency1, inputAmount?.raw, outputAmount?.raw)
-        : undefined,
-    [currency0, currency1, inputAmount, outputAmount],
-  );
-
-  return useMemo(
-    () => ({
-      currency0,
-      currency1,
-      inputAmount,
-      outputAmount,
-      executionPrice,
-    }),
-    [currency0, currency1, inputAmount, outputAmount, executionPrice],
-  );
-}
-
-export function useGelatoLimitOrderList() {
-  const { open, executed, cancelled } = useGelatoLimitOrdersHistory();
-
-  const openPending = useMemo(
-    () =>
-      (open.pending || []).map((item) => {
-        const container = { ...item } as any;
-        container['pending'] = true;
-        return container;
-      }),
-    [open.pending],
-  );
-
-  const cancelledPending = useMemo(
-    () =>
-      (cancelled.pending || []).map((item) => {
-        const container = { ...item } as any;
-        container['pending'] = true;
-        return container;
-      }),
-    [cancelled.pending],
-  );
-
-  const allOrders = useMemo(
-    () => [...cancelledPending, ...openPending, ...open.confirmed, ...cancelled.confirmed, ...executed],
-    [openPending, cancelledPending, open.confirmed, cancelled.confirmed, executed],
-  );
-
-  const allOpenOrders = useMemo(
-    () => [...cancelledPending, ...openPending, ...open.confirmed],
-    [openPending, cancelledPending, open.confirmed],
-  );
-
-  const allCancelledOrders = useMemo(() => cancelled.confirmed, [cancelled.confirmed]);
-
-  return useMemo(
-    () => ({
-      allOrders,
-      allOpenOrders,
-      allCancelledOrders,
-      executed,
-    }),
-    [allOrders, allOpenOrders, allCancelledOrders, executed],
-  );
 }
 /* eslint-enable max-lines */

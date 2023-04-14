@@ -1,6 +1,5 @@
 import { MaxUint256 } from '@ethersproject/constants';
 import { TransactionResponse } from '@ethersproject/providers';
-import { useGelatoLimitOrdersLib } from '@gelatonetwork/limit-orders-react';
 import { CAVAX, ChainId, CurrencyAmount, TokenAmount, Trade } from '@oceanswapdefi/sdk';
 import { useCallback, useMemo } from 'react';
 import { ROUTER_ADDRESS } from 'src/constants';
@@ -116,11 +115,10 @@ export function useApproveCallbackFromTrade(chainId: ChainId, trade?: Trade, all
 // wraps useApproveCallback in the context of a swap
 export function useApproveCallbackFromInputCurrencyAmount(currencyAmountIn: any | undefined) {
   const chainId = useChainId();
-  const gelatoLibrary = useGelatoLimitOrdersLib();
 
   const newCurrencyAmountIn = currencyAmountIn
     ? new TokenAmount(currencyAmountIn?.currency, currencyAmountIn?.numerator)
     : undefined;
 
-  return useApproveCallback(chainId, newCurrencyAmountIn, gelatoLibrary?.erc20OrderRouter.address ?? undefined);
+  return useApproveCallback(chainId, newCurrencyAmountIn, undefined);
 }

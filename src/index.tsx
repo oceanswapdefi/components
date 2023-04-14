@@ -1,5 +1,4 @@
-import { GelatoProvider } from '@gelatonetwork/limit-orders-react';
-import { CHAINS, ChainId } from '@oceanswapdefi/sdk';
+import { ChainId } from '@oceanswapdefi/sdk';
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import SelectTokenDrawer from 'src/components/SwapWidget/SelectTokenDrawer';
@@ -8,10 +7,7 @@ import { PangolinWeb3Provider, useLibrary } from 'src/hooks';
 import { useAllTokens } from 'src/hooks/Tokens';
 import { useActivePopups, useAddPopup, useRemovePopup } from 'src/state/papplication/hooks';
 import {
-  LimitOrderInfo,
   useDerivedSwapInfo,
-  useGelatoLimitOrderDetail,
-  useGelatoLimitOrderList,
   useSwapActionHandlers,
 } from 'src/state/pswap/hooks';
 import { useAllTransactions } from 'src/state/ptransactions/hooks';
@@ -49,19 +45,6 @@ export function PangolinProvider({
           <ApplicationUpdater />
           <MulticallUpdater />
           <TransactionUpdater />
-          {CHAINS[chainId]?.evm ? (
-            <GelatoProvider
-              library={library}
-              chainId={chainId}
-              account={account ?? undefined}
-              useDefaultTheme={false}
-              handler={'pangolin'}
-            >
-              {children}
-            </GelatoProvider>
-          ) : (
-            children
-          )}
         </QueryClientProvider>
       </ThemeProvider>
     </PangolinWeb3Provider>
@@ -72,14 +55,8 @@ export * from './constants';
 export * from './connectors';
 export * from './components';
 
-export * from '@gelatonetwork/limit-orders-react';
-export type { LimitOrderInfo };
-
 // components
 export { SelectTokenDrawer };
-
-// galeto hooks
-export { useGelatoLimitOrderDetail, useGelatoLimitOrderList };
 
 // hooks
 export {

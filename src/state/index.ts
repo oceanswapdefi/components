@@ -1,4 +1,3 @@
-import { GELATO_PERSISTED_KEYS, gelatoReducers } from '@gelatonetwork/limit-orders-react';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { load, save } from 'redux-localstorage-simple';
 import papplication from './papplication/reducer';
@@ -16,7 +15,6 @@ export const PANGOLIN_PERSISTED_KEYS: string[] = [
   'ptransactions',
   'pwatchlists',
   'ptoken',
-  ...GELATO_PERSISTED_KEYS,
 ];
 
 export const pangolinReducers = {
@@ -28,7 +26,6 @@ export const pangolinReducers = {
   puser,
   pwatchlists,
   ptoken,
-  ...gelatoReducers,
 };
 
 const store = configureStore({
